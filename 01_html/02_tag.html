@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag</title>
+</head>
+<body>
+    <h2>오늘의 공부 내용</h2>
+    <p>
+        오늘은 remote repo를 만들어 연결하고,
+        html의 이론을 배웠다. 그리고 지금은 tag에 대해 배우고 있다.
+    </p>
+    <br /><br /><br />
+    <!-- hr은 가로선 -->
+    <hr />
+    <h2>오늘의 할 일</h2>
+    <!-- ul : 순서가 없는 목록 -->
+    <!-- li : ul이나 ol안에서 목록을 작성할 때 사용 -->
+    <!-- ul의 type : disc(default), square, circle, none -->
+    <!-- nav바나 드롭다운 메뉴에 쓰이므로 보통 none -->
+    <ul type="none">
+        <li>html 복습하기</li>
+        <li>태그 복습하기</li>
+        <li>잠 자기</li>
+    </ul>
+
+    <!-- ol : 순서가 있는 목록-->
+    <!-- ol의 type : 1(default), a, A, i, I -->
+    <!-- ol의 start : 시작 값을 지정 -->
+    <!-- ol의 reversed : 역순으로 변경 -->
+    <ol type="a" start="a">
+        <h2>아이스 카페라떼 만드는 방법</h2>
+        <li><strong>우유</strong>를 180ml 컵에 넣습니다.</li>
+        <li><i>얼음</i>을 가득 넣습니다.</li>
+        <li><i>에스프레소 샷</i>을 넣어주면!</li>
+        <li>완성입니다. 맛있게 드세요.</li>
+    </ol>
+
+    <!-- 목록 중첩 -->
+    <ul type="none">
+        <h2>음식 목록</h2>
+        <li>양식
+            <ul>
+                <li>파스타</li>
+                <li>피자
+                    <!-- 또 중첩 가능 -->
+                    <ul>
+                        <li>치즈 피자</li>
+                        <li>고구마 피자</li>
+                        <li>하와이안 피자</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>한식
+            <ul>
+                <li>김치찌개</li>
+                <li>불고기</li>
+            </ul>
+        </li>
+        <li>일식
+            <ul>
+                <li>스시</li>
+                <li>라멘</li>
+                <li>야끼소바</li>
+            </ul>
+        </li>
+        <li>중식
+            <ul>
+                <li>짜장면</li>
+                <li>짬뽕</li>
+                <li>볶음밥</li>
+            </ul>
+        </li>
+    </ul>
+    <br /><br /><br />
+    <hr />
+    <!-- 상대경로 : 지금 위치에서 불러올 이미지까지의 경로-->
+    <img src="./img/sea.jpg" alt="파도치는 바다 사진">
+    <!-- 절대경로 : 홈 위치에서 해당 불러올 이미지까지의 경로-->
+    <img src="/01_html/img/hero6.png" alt="디바">
+    <!-- .으로 시작할 경우 상대경로, /로 시작할 경우 절대경로 -->
+    <!-- 링크 방법(외부 링크를 이미지주소복사 붙여넣기) -->
+    <img src="https://image.wconcept.co.kr/images/builder/1/4/15/37/PC_STYLESTORY_456x608_01_20240130173452.jpg" alt="w컨셉 아우터"
+    />
+    <br /><br /><br />
+    <hr />
+    <!-- a : 하이퍼링크 태그 -->
+    <!-- a의 herf : 연결할 URL -->
+    <!-- a의 target : _blank(new tab), _self(default) -->
+    <!-- a의 title : 마우스를 올리면(호버) 값을 보여줌 -->
+    <a href="https://naver.com" title="기본 target속성의 값은 _self">네이버로 이동(_self)</a>
+
+    <a href="https://google.com" target="_blank">구글로 이동(_blank)</a>
+    <!-- 같은 폴더내에 있으면 ./바로 파일명 -->
+    <a href="./01_start_html.html">폴더 내의 html 파일로 이동 가능</a> 
+</body>
+</html>

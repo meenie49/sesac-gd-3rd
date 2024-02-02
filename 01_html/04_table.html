@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table tag기본 구조</title>
+  </head>
+  <body>
+    <!-- table : 표를 만드는 태그 -->
+    <!-- <table><table/>만 사용시 선 없이 만들어짐 -->
+    <!-- border 테두리두께, width 너비, height 높이, align 표의정렬, bgcolor 배경색, bordercolor 테두리색, ... -->
+    <table
+      border="1"
+      width="100"
+      height="70"
+      align="center"
+      bgcolor="pink"
+      bordercolor="red"
+    >
+      <!-- 테이블의 제목은 caption 태그 사용 -->
+      <caption>
+        <h3>table</h3>
+      </caption>
+      <!-- 속성이 빨간색으로 보이는 이유 -->
+      <!-- css를 사용해 스타일링 할 수 있기 때문에 테이블의 속성을 지정하기보다는 css를 사용을 권장하기 때문 -->
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </table>
+    <br /><br /><br />
+
+    <h1>메뉴판</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+      <tr>
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>비교</th>
+      </tr>
+      <tr>
+        <td>파스타</td>
+        <td>8,900원</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>돈까스</td>
+        <td>9,000원</td>
+        <td>1,000원 추가 시 우동 증정</td>
+      </tr>
+      <tr>
+        <td>삼각김밥</td>
+        <td>1,500원</td>
+        <td>참치마요가 맛있음</td>
+      </tr>
+    </table>
+
+    <h1>메뉴판 new!</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+      <tr>
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>비교</th>
+        <th>짜잔</th>
+      </tr>
+      <tr>
+        <td>파스타</td>
+        <td colspan="2">8,900원</td>
+        <td rowspan="5">짜자잔</td>
+      </tr>
+      <tr>
+        <td>돈까스</td>
+        <td>9,000원</td>
+        <td>1,000원 추가 시 우동 증정</td>
+      </tr>
+      <tr>
+        <td>삼각김밥</td>
+        <td rowspan="2">1,500원</td>
+        <td>참치마요가 맛있음</td>
+      </tr>
+      <tr>
+        <td>줄김밥</td>
+        <td>먹기 좀 더 쉽긴 함</td>
+      </tr>
+      <tr>
+        <td colspan="3">볶음밥</td>
+      </tr>
+    </table>
+    <br /><br /><br />
+    <!-- width100%는 현재브라우저에서 가로로 꽉채워라, 글자정렬은 text-align, 세미콜론은 속성을 끝낸다라는 의미 -->
+    <!-- 행경우의 수를 먼저따져서 만들고 그다음 열칸의 경우의 순을 따져서 만든다 -->
+    <!-- 빈칸까지 만들어야된다고 생각했는데 그 경우의 수는 안만들어도됨 -->
+    <!-- text-align은 글자 정렬이며 style속성에서 지정 -->
+    <table
+      border="1"
+      cellspacing="0"
+      width="100%"
+      style="text-align: center"
+      cellpadding="50"
+    >
+      <tr>
+        <td colspan="2">1</td>
+        <td rowspan="2">2</td>
+      </tr>
+      <tr>
+        <td rowspan="2">3</td>
+        <td>center</td>
+      </tr>
+      <tr>
+        <td colspan="2">4</td>
+      </tr>
+    </table>
+    <br /><br /><br />
+
+    <table
+      border="1"
+      cellspacing="0"
+      cellpadding="10"
+      style="text-align: center"
+      align="center"
+    >
+      <caption>
+        <h1 style="color: green; text-align: center">스타벅스(실습)</h1>
+      </caption>
+      <tr>
+        <th>구분</th>
+        <th>음료</th>
+        <th>가격</th>
+        <th>이미지</th>
+      </tr>
+      <tr>
+        <td rowspan="2">커피류</td>
+        <td>아메리카노</td>
+        <td>4200원</td>
+        <!-- 클릭하면 그페이지로 이동해야하기 때문에 a태그 필요, a태그 사이에 넣어줘야 사진 클릭하면 이동가능-->
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=110563"
+            target="_blank"
+          >
+            <img
+              src="./img/11.PNG"
+              alt="아이스 카페 아메리카노"
+              style="width: 200px; height: 200px"
+            />
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>돌체라떼</td>
+        <td>4800원</td>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=128692"
+            target="_blank"
+          >
+            <img
+              src="./img/22.PNG"
+              alt="스타벅스 돌체 라떼"
+              style="width: 200px; height: 200px"
+            />
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">주스류</td>
+        <td>자바 칩 프라푸치노</td>
+        <td rowspan="2">5000원</td>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168016"
+            target="_blank"
+          >
+            <img
+              src="./img/33.PNG"
+              alt="자바 칩 프라푸치노"
+              style="width: 200px; height: 200px"
+            />
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>녹차 프라푸치노</td>
+        <td>
+          <a
+            href="https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000002502"
+            target="_blank"
+          >
+            <img
+              src="./img/44.PNG"
+              alt="제주 유기농 말차로 만든 크림 프라푸치노"
+              style="width: 200px; height: 200px"
+            />
+          </a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

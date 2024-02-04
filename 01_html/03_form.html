@@ -36,7 +36,7 @@
       <!-- label의 for 속성을 사용하지 않고 암시적으로 연결하는 방법 -->
       <!-- 여닫는 태그 둘다 있는 태그는 중첩사용 가능, 하나만 있는 태그의 경우 태그 중첩 사용 x -->
       <label> 비밀번호 <input type="password" /> </label>
-      <br />
+      <br /><br /><br />
 
       <input type="checkbox" name="agree" /> 동의합니다.
       <br />
@@ -48,6 +48,7 @@
       <!-- disabled: 비활성화 -->
       <input type="checkbox" id="agree1" name="agree" disabled />
       <label for="agree1">동의합니다.</label>
+      <br /><br />
 
       <h5>다음 중 input type이 아닌 것은?(모두 고르시오)</h5>
       <input type="checkbox" id="input1" name="input" />
@@ -60,7 +61,7 @@
       <label for="input4"> img</label>
       <input type="checkbox" id="input5" name="input" />
       <label for="input5"> date</label>
-      <br />
+      <br /><br /><br />
 
       <!-- radio 기능을 사용하려면 무조건 name 기능을 써야함 그래야 라디오 기능을 쓸 수 있음-->
       <!-- radio는 그룹 중에서 하나만 선택할 수 있는 타입 -->
@@ -80,7 +81,7 @@
       <label for="radio22">radio type 2</label>
       <input type="radio" id="radio33" />
       <label for="radio33">radio type 3</label>
-      <br />
+      <br /><br />
 
       <h5>다음 중 img 태그의 속성인 것은?</h5>
       <input type="radio" name="radio" id="radio30" />
@@ -91,7 +92,7 @@
       <label for="radio32"> mouse</label>
       <input type="radio" name="radio" id="radio33" />
       <label for="radio33"> value</label>
-      <br />
+      <br /><br /><br />
 
       <label for="color">색상을 선택해주세요.</label>
       <input type="color" id="color" />
@@ -117,7 +118,7 @@
 
       <label for="date-time">생년월일을 입력해주세요.(시간 포함)</label>
       <input type="datetime-local" id="date-time" />
-      <br />
+      <br /><br /><br />
 
       <!-- 3가지 방법 input태그의 button과 submit , button태그-->
       <!-- 방법 1. input 태그의 button type -->
@@ -134,15 +135,15 @@
       <!-- javascript로 직접 입력해줘야함, 닫는 태그가 있어 여러태그 중복해서 사용가능 -->
       <!-- 방법3. button 태그 사용 -->
       <!-- 여는 태그와 닫는 태그가 있어 자유롭게 스타일링 및 활용 가능 -->
-      <br />
       <button>
         버튼
         <div style="color: red">div태그 추가</div>
       </button>
-      <br />
+      <br /><br /><br />
 
       <!-- cols : 가로 너비 속성 rows : 세로 너비 속성 -->
       <label for="textarea">많은 양의 텍스트를 받을 때 사용하는 textarea</label>
+      <br />
       <textarea
         id="textarea"
         cols="130"
@@ -197,7 +198,7 @@
       <br /><br />
       <textarea
         id="textarea1"
-        placeholder="하고 싶은 말을 써주세요:&#41)"
+        placeholder="하고 싶은 말을 써주세요:&#41"
         cols="100"
         rows="10"
       ></textarea>

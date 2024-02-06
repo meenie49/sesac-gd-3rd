@@ -9,3 +9,60 @@ h3 {
   background-color: black;
   color: white;
 }
+
+/* 이아래로 캘린더 실습 */
+
+* {
+  background-color: #fdffc6;
+}
+
+table {
+  width: 770px;
+  height: 500px;
+  /* 테이블가운데정렬 */
+  margin: auto;
+  padding: 0;
+  /* 셀간격 */
+  border-spacing: 0px;
+}
+
+caption > h2 {
+  color: green;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  width: 110px;
+  height: 50px;
+}
+
+td {
+  text-align: left;
+  vertical-align: top;
+  width: 110px;
+  height: 10px;
+  padding: 5px;
+}
+.text {
+  height: 80px;
+  text-align: left;
+}
+
+.saturday {
+  color: blue;
+}
+
+.sunday,
+#holiday1,
+#holiday2,
+#holiday3,
+#holiday4,
+.textred {
+  color: red;
+}
+
+.textred,
+#valentine {
+  font-size: small;
+}

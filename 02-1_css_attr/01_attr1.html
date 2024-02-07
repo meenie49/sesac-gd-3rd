@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Attribute1</title>
+    <!-- ctrl + 클릭 해서 그 파일로 넘어가면 연결 잘 된것 -->
+    <link rel="stylesheet" href="./01_attr1.css" />
+  </head>
+  <body>
+    <!-- 너비, 높이, 글자크기 f12 click으로 확인가능 -->
+    <h2>크기 단위</h2>
+
+    <div class="px">100px</div>
+
+    <div class="em-text">
+      em -> 32px
+      <div class="em-text">
+        1em은 32px이 됨 em -> 64px
+        <div class="em-text">em -> 128px</div>
+      </div>
+    </div>
+
+    <div class="rem-text">
+      rem
+      <div class="rem-text">
+        rem
+        <div class="rem-text">rem</div>
+      </div>
+    </div>
+
+    <div class="em">10em</div>
+    <div class="em-parents">
+      em 부모 요소 font-size: 100px
+      <div class="em">10em</div>
+    </div>
+
+    <div class="rem">10rem</div>
+    <div class="rem-parents">
+      rem 부모 요소 font-size: 100px
+      <div class="rem">10rem</div>
+    </div>
+
+    <div class="percent-parents">
+      % 부모 요소 300px
+      <div class="percent">50%</div>
+    </div>
+
+    <div class="vh">30vh</div>
+    <div class="vw">30vw</div>
+    <br />
+    <hr />
+    <h2>display 속성</h2>
+    <div class="d-block">block 1</div>
+    <div class="d-block">block 2</div>
+    <div class="d-block">block 3</div>
+    <div class="d-block">block 4</div>
+    <br /><br />
+
+    <span class="d-inline">inline 1</span>
+    <span class="d-inline">inline 2</span>
+    <span class="d-inline">inline 3</span>
+    <span class="d-inline">inline 4</span>
+    <br /><br />
+
+    <!-- ctrl + d : 동일한 텍스트를 검색해서 선택을 추가해줌 -->
+    <span class="d-inline-block">inline-block 1</span>
+    <span class="d-inline-block">inline-block 2</span>
+    <span class="d-inline-block">inline-block 3</span>
+    <span class="d-inline-block">inline-block 4</span>
+    <br /><br /><br />
+    <!-- inline 요소 자식으로 block 요소 들어갈 경우 레이아웃 깨짐 사용x -->
+    <span style="border: 5px solid black">
+      span
+      <div style="background-color: grey">div</div>
+    </span>
+
+    <!-- 가장 겉에 div대신 container를 사용해도 좋음 -->
+    <div class="b">
+      <span class="ib1">HTML</span>
+      <span class="ib2">CSS</span>
+      <span class="ib3">Javasript</span>
+    </div>
+    <br />
+    <hr />
+
+    <h2>min-width, max-width</h2>
+    <div class="parent">
+      <div class="min"></div>
+      <div class="max"></div>
+    </div>
+    <br />
+    <hr />
+
+    <header class="header">header</header>
+    <div class="calc">calc() 사용하기</div>
+
+    <h2>border, border-radius</h2>
+    <div class="square border">border</div>
+    <button class="square rounded">rounded</button>
+
+    <div class="box-sizing content-box">content-box</div>
+    <div class="box-sizing border-box">border-box</div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성 선택자</title>
+    <style>
+      /* 속성만 작성하는 경우 해당 속성이 부여된 모든 요소를 선택 */
+      [disabled] {
+        background-color: red;
+      }
+
+      [placeholder] {
+        background-color: yellow;
+      }
+      /* 속성값까지 작성하는 경우 해당 속성과 속성값을 가진 요소를 선택 */
+      /* 속성값만 선택하는 것은 안됨 ->["password"] 불가 */
+      [type="password"] {
+        font-size: 30px;
+      }
+      /* 둘의 우선순위는 같으므로 나중에 적힌 속성선택자로 쓰인게 표현됨 */
+      /* 클래스 선택자 대신 속성 선택자를 사용해 스타일링 가능 */
+      /* 하지만 번거로움으로 인해 속성 선택자로 class를 선택하는 경우 거의 없음 */
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: violet;
+      }
+      [class="square"] {
+        background-color: aquamarine;
+      }
+
+      /* 요소의 모든 속성을 선택할 수 있음 */
+      [href="#"] {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="text1" />
+    <input type="text" placeholder="text2" />
+    <!-- disabled는 사용할 수 없도록 막아주는 것 -->
+    <input type="text" placeholder="text3" disabled />
+    <input type="password" />
+
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <a href="#"></a>
+  </body>
+</html>

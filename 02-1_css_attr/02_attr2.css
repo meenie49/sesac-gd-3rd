@@ -1,4 +1,10 @@
 /* 구글 폰트: link 태그,  font-family를 사용해 웹 폰트 적용 */
+
+/* 모든 폰트의 지정 -> *전체 선택자) 사용 -->
+ * {
+    font-family : ;
+}  */
+
 .google {
   font-family: "Single Day", "Gothic A1", sans-serif;
 }
@@ -57,6 +63,7 @@
 }
 
 .opacity-1 {
+  /* 완전 불투명 */
   opacity: 1;
 }
 
@@ -97,10 +104,17 @@
   overflow: auto;
 }
 
+/* scroll은 content가 해당 요소의 크기를 넘치지 않아도 스크롤 라인이 생김 */
 .overflow-scroll {
   overflow: scroll;
 }
 
 .overflow-visible {
-  overflow: visible;
+  /* overflow: visible -> 기본값 */
+
+  /* x,y축에만 따로 지정하는 속성 */
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* hidden auto: */
+  overflow: hidden auto;
 }

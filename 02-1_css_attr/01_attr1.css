@@ -84,7 +84,7 @@
 .d-inline {
   /* display 속성으로 인-> 블, 블->인 으로 바꿀 수 있음 */
   /* display : inline; -> span 요소의 defalut 속성값 */
-  display: block;
+  /* display: block; */
   background-color: lightgray;
   border: 1px solid darkslateblue;
   /* inline 요소는 content에 맞춰지기 때문에 임의로 설정해도 적용 안됨 */
@@ -100,8 +100,12 @@
 .d-inline-block {
   width: 200px;
   height: 200px;
+
+  /* block 요소처럼 width와 height를 지정할 수 있음 */
+  /* inline 요소처럼 content 크기에 딱 맞도록 기본 크기 자동 지정 */
+  /* inline 요소처럼 수평 정렬 */
   display: inline-block;
-  background-color: salmon;
+  background-color: 1px solid salmon;
   height: 30px;
 }
 
@@ -109,28 +113,36 @@
   background-color: orange;
   width: auto;
   height: 200px;
+}
+
+.b * {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  /* 간격 30px로 바꿈 */
   margin-right: 30px;
 }
 
 .ib1 {
   background-color: skyblue;
-  display: inline-block;
+  /* display: inline-block;
+  margin-right: 30px;
   width: 200px;
-  height: 100px;
+  height: 100px; */
 }
 
 .ib2 {
   background-color: green;
-  display: inline-block;
+  /* display: inline-block;
   width: 200px;
-  height: 100px;
+  height: 100px; */
 }
 
 .ib3 {
   background-color: red;
-  display: inline-block;
+  /* display: inline-block;
   width: 200px;
-  height: 100px;
+  height: 100px; */
 }
 
 /* max-width, min-width */
@@ -184,10 +196,14 @@
 
 .rounded {
   /* border: none; */
-  border: 3px;
+  width: 150px;
+  border: 3px solid black;
   height: 80px;
+  /* radius 순서 : 좌상-우상-우하-좌하 */
   border-radius: 40px;
   border-radius: 5px 10px;
+  border-radius: 20px 0 5px;
+  border-radius: 5px 10px 15px 20px;
 }
 
 /* box-sizing */

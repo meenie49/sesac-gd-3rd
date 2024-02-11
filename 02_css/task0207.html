@@ -18,7 +18,23 @@
       textarea {
         width: 100%;
       }
+      textarea:focus {
+        background-color: #FFD0EC;
+        width: 100%;
+      }
+
       /* checked */
+      #red:active {
+        background-color: red;
+      }
+      #blue:checked {
+        background-color: blue;
+      }
+      #yellow:checked {
+        background-color: yellow;
+      }
+
+
 
       /* active */
       button {
@@ -29,18 +45,17 @@
         font-size: 17px;
         border-radius: 10px;
         border: none;
+      }     
+      button:active {
+        background-color: wheat;
+        color: #f96666;
       }
-      form :nth-child(4) {
-        background-color: red;
-        color: white;
-      }
-      form :nth-child(6) {
-        background-color: blue;
-        color: white;
-      }
-      form :nth-child(8) {
-        background-color: yellow;
-      }
+
+      
+
+      
+
+
     </style>
   </head>
   <body>
@@ -48,16 +63,17 @@
     <form>
         <!-- 이모티콘은 윈도우 + . -->
         <textarea name="proposal" id="proposal" cols="30" rows="10" placeholder="건의사항을 작성해주세요🎈"></textarea>
+        <br />
         <label for="proposal"></label>
-        <input type="checkbox" id="red" checked/>
+        <input type="checkbox" id="red"/>
         <label for="red">빨강</label>
-        <input type="checkbox" id="blue" checked/>
+        <input type="checkbox" id="blue"/>
         <label for="blue">파랑</label>
-        <input type="checkbox" id="yellow" checked/>
+        <input type="checkbox" id="yellow"/>
         <label for="yellow">노랑</label>
         <button>제출</button>
-      label - 명시적 방식: id와 for 맞추기 - 암시적 방식: label 내부에 input
-      작성 - checkbox 사용 시 명시적 방식으로 작성
+      <!-- label - 명시적 방식: id와 for 맞추기 - 암시적 방식: label 내부에 input
+      작성 - checkbox 사용 시 명시적 방식으로 작성 -->
     </form>
   </body>
 </html>

@@ -26,18 +26,9 @@
 
       
       /* checked */
-     
-      #red:focus {
-        background-color: red;
-        color: white;
+      input:checked + label {
+        background-color: #E7BCDE;
       }
-      #blue:checked {
-        background-color: blue;
-      }
-      #yellow:checked {
-        background-color: yellow;
-      }
-
 
       /* active */
       button {
@@ -89,18 +80,16 @@
       
       .background {
         background-color: #F8FDCF;
-        line-height: 100px;
         width: 50vw;
         height: 50vw;
+        margin: auto;
       }
 
       .content {
         background-color: #99DBF5;
-        line-height: 100px;
+        line-height: 5vw;
         width: 10%;
         height: 10%;
-        line-height: 10v;
-        text-align: center;
         margin: auto;
       }
 
@@ -133,8 +122,9 @@
         <input type="checkbox" id="yellow"/>
         <label for="yellow">노랑</label>
         <button>제출</button>
-      <!-- label - 명시적 방식: id와 for 맞추기 - 암시적 방식: label 내부에 input
-      작성 - checkbox 사용 시 명시적 방식으로 작성 -->
+        <!-- label - 명시적 방식: id와 for 맞추기 - 암시적 방식: label 내부에 input
+          작성 - checkbox 사용 시 명시적 방식으로 작성 -->
+        </form>
 
       <br /><br />
       <hr />
@@ -155,6 +145,10 @@
       <hr />
 
       <div class="bluebox">200px x 200px 파랑</div>
-    </form>
+
+      <div style="border: 1px solid pink">line-height 속성 눈으로 보기!</div>
+<div style="border: 1px solid pink; line-height: 100px">
+  line-height 속성 눈으로 보기!
+</div>
   </body>
 </html>

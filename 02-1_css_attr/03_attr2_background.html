@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>background</title>
+    <!-- 그라데이션 속성 -->
+    <style>
+      div {
+        width: 300px;
+        height: 200px;
+        margin-bottom: 30px;
+      }
+      .grad-1 {
+        /* 2가지 색은 상하로 배치 */
+        background: linear-gradient(grey, tomato);
+      }
+      .grad-2 {
+        /* 각도 , 앞선언 위, 뒤선언 아래 */
+        background: linear-gradient(90deg, grey, tomato);
+      }
+      .grad-3 {
+        /* 각도, 앞선언 색상, 몇퍼센트 차지, 뒤선언 색상 */
+        background: linear-gradient(90deg, grey, 75%, tomato);
+      }
+      .grad-4 {
+        /* 3가지 색상 */
+        background: linear-gradient(grey, tomato, gold);
+      }
+    </style>
+    <link rel="stylesheet" href="./03_attr2_background.css" />
+  </head>
+  <body>
+    <div class="grad-1"></div>
+    <div class="grad-2"></div>
+    <div class="grad-3"></div>
+    <div class="grad-4"></div>
+    <br /><br />
+    <hr />
+
+    <!-- box라는 속성을 공통으로 가짐 -->
+    <div class="background box"></div>
+    <div class="background-image box"></div>
+  </body>
+</html>

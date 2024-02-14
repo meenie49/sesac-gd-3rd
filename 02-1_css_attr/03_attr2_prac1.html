@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .prac1,
+      .prac2,
+      .prac3 {
+        /* 링크 이미지 불러오는 법 : url(); */
+        background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a);
+        width: 800px;
+        height: 500px;
+        background-color: skyblue;
+        /* 요소간의 간격 주기 */
+        margin-bottom: 10px;
+      }
+      .prac1 {
+        background-size: auto;
+        background-position: center;
+        background-repeat: repeat-x;
+      }
+      .prac2 {
+        background-size: contain;
+        background-position: 100px 30px;
+        background-repeat: no-repeat;
+      }
+      .prac3 {
+        background-size: cover;
+        /* - 값은 왼쪽이나 위로 이동시킬 수 있음 */
+        background-position: -100px;
+        background-repeat: no-repeat;
+      }
+      input {
+        width: 300px;
+        height: 50px;
+        border: none;
+        border-radius: 25px;
+        background-image: url("./img/search-icon.png");
+        background-position: 10px 10px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-color: lightgray;
+      }
+
+      input:hover {
+        background-color: grey;
+      }
+      input:focus {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="prac1"></div>
+    <div class="prac2"></div>
+    <div class="prac3"></div>
+
+    <!-- 검색창 실습 div랑 input 요소 사용하던지 input 하나만으로도 만들 수 있음 -->
+    <input type="text" placeholder="검색" />
+  </body>
+</html>

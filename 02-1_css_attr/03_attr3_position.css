@@ -1,0 +1,118 @@
+/* body 태그의 기본적인 마진 패딩 속성 지우기 */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(white, orange);
+  height: 2000px;
+}
+
+/* 요소에 아무것도 없는것도 다 크기지정 해줘야함 width height 지정안해주면 안보임 */
+div {
+  width: 100px;
+  height: 100px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 100px;
+}
+
+.position-static {
+  /* position : static; */
+  /* position: static; (default) */
+  /* 
+   !중요!기본 값이기 때문에 작성하지 않아도 됨, 부모속성을 따질경우 relative로 바꿔줘야함 (주석처리를 하던 안하던 결과가 동일)
+  -inline 요소라면 왼쪽에서 오른쪽으로 쌓임
+  -block 요소라면 위에서 아래로 쌓임
+    */
+  /* top, bottom, right, left 속성 적용 안됨 */
+  background-color: pink;
+}
+
+/* position: relative; -> 상대 위치 */
+/* 일반적인 흐름에 따라 배치하되,top, bottom, left, right 속성을 사용해 위치 지정 */
+/* 
+- 자신이 원래 있어야 하는 위치 기준 (원래 있던 자리 기준으로 이동)
+- top :  위에서 부터의 여백
+- bottom : 아래서 부터의 여백
+- right : 오른쪽으로부터의 여백
+- left : 왼쪽으로부터의 여백
+*/
+/* 자기의 자리를 벗어나도 원래 자리가 비어있음 -> 문서의 흐름을 깨지 않음 */
+.position-relative {
+  background-color: lightblue;
+  position: relative;
+  /* left: 100px; */
+  /* top: 50px; */
+  /* top, bottom 이랑 left, right는 둘 중 하나만 해야함 */
+  bottom: 30px;
+  right: 15px;
+}
+
+/* 고정이 되는 속성은 아님 */
+/* position-absolute; -> 절대 위치 */
+/* 
+- 기준점
+ - position: static이 아닌 값을 가지는 제일 가까운 조상 기준
+ - 만약 position: static이 아닌 값을 가진 조상이 없다면 viewport를 기준
+ - 특정 요소를 기준 삼아 top, bottom, left, right 속성을 지정함
+*/
+/* 문서 흐름을 벗어남 -> 자기 자리가 사라짐 */
+.position-absolute {
+  background-color: gold;
+  position: absolute;
+  top: 0;
+}
+
+/* position : fixed; -> 고정 위치 */
+/* 
+- viewport 기준으로 특정 위치에 배치
+- 스크롤 되어도 움직이지 않음 -> header, top-button 제작 시 많이 사용
+- top, bottom, left, right 속성 중 하나 이상을 지정
+- 원래 위치 사라짐
+*/
+.position-fixed {
+  background-color: coral;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.position-sticky {
+  position: sticky;
+  /* 뷰포트의 최상단에 도달했을 때 고정 */
+  /* position: sticky; -> top 속성에 위치에 도달했을 때부터 해당 위치에 고정 */
+  /* 부모 요소 내에서만 sticky로 작동함 -> html 구조 매우 중요 */
+  top: 0;
+  background-color: palegreen;
+}
+
+.sticky-container {
+  width: 100vw;
+  height: 1200px;
+  background: linear-gradient(lightblue, lightpink);
+}
+
+.container {
+  background-color: beige;
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.item1 {
+  background-color: brown;
+  position: relative;
+  left: 50px;
+  top: 30px;
+}
+.item2 {
+  background-color: blueviolet;
+  position: absolute;
+  right: 30px;
+  bottom: 100px;
+}
+.item3 {
+  background-color: blue;
+  position: fixed;
+  right: 100px;
+  top: 100px;
+}

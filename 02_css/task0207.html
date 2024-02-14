@@ -21,13 +21,26 @@
       }
       textarea:focus {
         background-color: #FFD0EC;
-        width: 100%;
+        /* width: 100%; */
       }
 
       
       /* checked */
-      input:checked + label {
-        background-color: #E7BCDE;
+      /* 각 input 태그 바로 뒤 label의 속성이 checked 되면 배경색이 변해야함 */
+      #red:checked + label {
+        background-color: red;
+        color: white;
+        font-weight: 700;
+      }
+      #blue:checked + label {
+        background-color: blue;
+        color: white;
+        font-weight: 700;
+      }
+      #yellow:checked + label {
+        background-color: yellow;
+        color: black;
+        font-weight: 700;
       }
 
       /* active */
@@ -77,21 +90,25 @@
         border-color: #99BC85 #FF6868 #F8E559 #31304D;
         border-radius: 14px 25px 4px 9px;
       }
-      
-      .background {
-        background-color: #F8FDCF;
-        width: 50vw;
-        height: 50vw;
-        margin: auto;
-      }
 
+      /* calc랑 line-height */
+      .background {
+        width: 100vw;
+        height: 100vh;
+        background-color: #FFD0EC;
+      }
+      
       .content {
         background-color: #99DBF5;
-        line-height: 5vw;
-        width: 10%;
-        height: 10%;
-        margin: auto;
+        width: 10vw;
+        height: 10vw;
+        /* 화면 전체높이의 중간이 50vh인데 content가 10vw이므로 중앙에 위치하기 위해서는 5vw만큼 빼줘야함 */
+        margin: calc(50vh-5vw) auto 0 auto;
+        text-align: center;
+        /* 높이와 똑같이 맞추면 세로중앙정렬 */
+        line-height: 10vw;
       }
+      /* 여기까지 */
 
       .bluebox {
         background-color: blue;
@@ -114,7 +131,8 @@
         <!-- 이모티콘은 윈도우 + . -->
         <textarea name="proposal" id="proposal" cols="30" rows="10" placeholder="건의사항을 작성해주세요🎈"></textarea>
         <br />
-        <label for="proposal"></label>
+        <!-- textbox에는 굳이 label 속성 안해줘도됨 -->
+        <!-- <label for="proposal"></label> -->
         <input type="checkbox" id="red"/>
         <label for="red">빨강</label>
         <input type="checkbox" id="blue"/>
@@ -138,17 +156,20 @@
       <br /><br />
       <hr />
 
+      <!-- calc랑 line-height -->
       <div class="background">
         <div class="content">sesac</div>
       </div>
+      
       <br /><br />
       <hr />
 
       <div class="bluebox">200px x 200px 파랑</div>
 
       <div style="border: 1px solid pink">line-height 속성 눈으로 보기!</div>
-<div style="border: 1px solid pink; line-height: 100px">
-  line-height 속성 눈으로 보기!
-</div>
+      <div style="border: 1px solid pink; line-height: 100px">
+        line-height 속성 눈으로 보기!
+      </div>
+
   </body>
 </html>

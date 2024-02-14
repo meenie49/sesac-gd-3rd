@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 2000px;
+      }
+
+      .product-info {
+        background-color: lightblue;
+        width: 100vw;
+        height: 50vh;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        background-color: palevioletred;
+        width: 20vw;
+        height: 50px;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        line-height: 50px;
+        font-weight: 100;
+        color: black;
+      }
+
+      .top-btn {
+        background-color: pink;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        bottom: 50px;
+        right: 100px;
+        text-align: center;
+        line-height: 100px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="product-info">section 1</section>
+      <section class="product-info-detail">
+        <div class="fixed-tab">
+          <ul>
+            <li><a href="#">상품정보</a></li>
+            <li><a href="#">혜택/구매정보</a></li>
+            <li><a href="#">고객리뷰/Q&A</a></li>
+            <li><a href="#">추천 상품</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <a href="#" class="top-btn">위로</a>
+  </body>
+</html>

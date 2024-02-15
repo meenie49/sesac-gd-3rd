@@ -96,7 +96,7 @@
         width: 100vw;
         height: 100vh;
         background-color: #FFD0EC;
-        vertical-align: middle;
+        /* css 버그 */
         border: 1px solid;
       }
       
@@ -105,6 +105,8 @@
         width: 10vw;
         height: 10vw;
         /* 화면 전체높이의 중간이 50vh인데 content가 10vw이므로 중앙에 위치하기 위해서는 5vw만큼 빼줘야함 */
+        /* margin : 상하 좌우 */
+        /* margin이 잘 안들어가는 경우 전체속성을 먼저 선언하고 따로 필요한 부위를 다시 선언해주기 */
         margin: 0 auto;
         margin-top: calc(50vh - 5vw);
         text-align: center;

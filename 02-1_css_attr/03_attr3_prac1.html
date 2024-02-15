@@ -17,10 +17,23 @@
         height: 50vh;
       }
 
+      .product-info-detail {
+        width: 100vw;
+        height: 50vh;
+        background-color: #faef9b;
+      }
+
+      .fixed-tab {
+        /* fixed-tab , ul, li 에 border= 1px; 선언했더니 안떴음 */
+        border-bottom-width: 1px;
+        border-bottom-color: black;
+        border-bottom-style: solid;
+      }
       ul {
         margin: 0;
         padding: 0;
         background-color: palevioletred;
+        border-bottom: 3px;
       }
 
       li {
@@ -32,8 +45,16 @@
         padding: 0;
         text-align: center;
         line-height: 50px;
-        font-weight: 100;
+      }
+
+      a {
+        /* a태그에 직접적으로 선언해야하는 것 */
+        /* a태그 생성시 자동적으로 만들어지는 글씨밑줄은 li태그아닌 a태그에 */
+        /* color */
+        /* font-weight */
+        text-decoration-line: none;
         color: black;
+        font-weight: bold;
       }
 
       .top-btn {
@@ -46,7 +67,6 @@
         right: 100px;
         text-align: center;
         line-height: 100px;
-        color: black;
       }
     </style>
   </head>

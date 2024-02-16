@@ -42,14 +42,23 @@
         background-size: 30px;
         background-repeat: no-repeat;
         background-color: lightgray;
+        /* 검색창 커서를 오른쪽으로 옮기고싶다 -> padding값을 이용 */
         padding-left: 50px;
+        font-size: 20px;
       }
 
       input:hover {
         background-color: grey;
       }
+      /* :not(input:focus) 은 포커스 되었을 때를 제외한 hover 상태를 위해 작성 */
+      /* input:hover:not(input:focus) {
+        background-color: aliceblue;
+      } */
+
       input:focus {
         background-color: lightgray;
+        /* focus 시 자동으로 생기는 테두리 속성 -> outline으로 바꾸기 */
+        outline: none;
       }
     </style>
   </head>

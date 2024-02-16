@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0216과제</title>
+    <style>
+      section {
+        position: relative;
+        width: 100vw;
+        height: 500px;
+        background-image: url(./img/grass.png);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+      }
+
+      /* absolute는 상속되나? */
+      .circle1,
+      .circle2,
+      .circle3,
+      .circle4,
+      .circle5 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      .circle1 {
+        background-color: #2a1f8a;
+        top: 30px;
+      }
+
+      .circle2 {
+        background-color: #4c3af0;
+        top: 80px;
+        left: 70px;
+      }
+
+      .circle3 {
+        background-color: #675bcc;
+        top: 130px;
+        left: 70px;
+      }
+
+      .circle4 {
+        background-color: #918ad8;
+        top: 170px;
+      }
+
+      .circle5 {
+        background-color: #cfcbf3;
+        top: 230px;
+      }
+
+      .white {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: white;
+        position: absolute;
+      }
+
+      .black {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: black;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>애벌레 만들기</h3>
+    <section>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+      <div class="circle5"></div>
+      <div class="white"></div>
+      <div class="black"></div>
+    </section>
+  </body>
+</html>

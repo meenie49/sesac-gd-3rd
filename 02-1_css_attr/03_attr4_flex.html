@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display: flex</title>
+    <link rel="stylesheet" href="./03_attr4_flex.css" />
+  </head>
+  <body>
+    <!-- 부모에 flex 설정을 하면 뭐가 다르나? -->
+    <!-- 요소들이 세로로쌓이던 것 -> 가로로 쌓임 -->
+    <div class="container1">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+    </div>
+    <br />
+    <div class="container2">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+      <div class="item item6">6</div>
+      <div class="item item7">7</div>
+      <div class="item item8">8</div>
+    </div>
+    <!-- 클래스 명만 입력해서 enter 해도 만들어짐, span.container -->
+    <!-- .container>.item*5 -->
+    <!-- .container>a.item$*5{아이템 $} -->
+    <div class="container3">
+      <div class="itemitem item11">1</div>
+      <div class="itemitem item22">
+        2
+        <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas suscipit
+        veniam laboriosam, aperiam aspernatur in distinctio cumque repudiandae
+        saepe cum placeat neque deleniti qui nobis necessitatibus exercitationem
+        tenetur nostrum nulla? -->
+      </div>
+      <div class="itemitem item33">3</div>
+      <div class="itemitem item44">4</div>
+      <div class="itemitem item55">5</div>
+    </div>
+    <br /><br /><br /><br />
+  </body>
+</html>

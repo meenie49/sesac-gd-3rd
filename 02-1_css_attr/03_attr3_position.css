@@ -20,8 +20,8 @@ div {
   /* position: static; (default) */
   /* 
    !중요!기본 값이기 때문에 작성하지 않아도 됨, 부모속성을 따질경우 relative로 바꿔줘야함 (주석처리를 하던 안하던 결과가 동일)
-  -inline 요소라면 왼쪽에서 오른쪽으로 쌓임
-  -block 요소라면 위에서 아래로 쌓임
+  - inline 요소라면 왼쪽에서 오른쪽으로 쌓임
+  - block 요소라면 위에서 아래로 쌓임
     */
   /* top, bottom, right, left 속성 적용 안됨 */
   background-color: pink;
@@ -115,4 +115,85 @@ div {
   position: fixed;
   right: 100px;
   top: 100px;
+}
+
+/* index 실습 */
+/* 처음에는 선언순서대로 마지막에 선언한게 가장 위에 위치 */
+/* 모든 요소에 z-index주는게 아니고 특정하게 위치를 속성해주는 요소에만 z-index주기 */
+.parent {
+  position: relative;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle1 {
+  background-color: #9afaff;
+  top: 0;
+  left: 200px;
+  /* z-index: 3; */
+}
+
+.circle2 {
+  background-color: #84ff8d;
+  top: 0;
+  left: 150px;
+  /* z-index: 4; */
+}
+
+.circle3 {
+  background-color: #ffeb88;
+  top: 0;
+  left: 100px;
+  z-index: 5;
+}
+
+.circle4 {
+  background-color: #ffb680;
+  top: 0;
+  left: 50px;
+  z-index: 4;
+}
+
+.circle5 {
+  top: 0;
+  left: 0;
+  background-color: #ff7c7c;
+  /* z-index: 3; */
+}
+
+/* z-index 실습2 */
+.container2 {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+/* .container > * 로 선언해도 똑같음 */
+.item4,
+.item5,
+.item6 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.item4 {
+  background-color: tan;
+}
+
+.item5 {
+  top: 30px;
+  left: 30px;
+  background-color: #ffb680;
+}
+
+.item6 {
+  top: 60px;
+  left: 60px;
+  background-color: #ff7c7c;
 }

@@ -28,23 +28,33 @@
         border-bottom-width: 1px;
         border-bottom-color: black;
         border-bottom-style: solid;
+        position: sticky;
+        /* sticky는 스크롤해서 해당위치에 도착했을때 고정시켜라 */
+        /* relative와 absolute랑 다름 */
+        top: 0;
       }
       ul {
         margin: 0;
         padding: 0;
         background-color: palevioletred;
-        border-bottom: 3px;
+        /* 리스트 모양 지우기 */
+        list-style: none;
+        /* flex 이용 */
+        display: flex;
       }
 
       li {
         /* 미세한 수치는 정확하게 들어가지 않아 꼼수를 써야함 */
         width: 24vw;
         height: 50px;
-        display: inline-block;
+        /* display: inline-block; */
+        /*  */
+        justify-content: space-around;
         border: 0;
         padding: 0;
         text-align: center;
         line-height: 50px;
+        /* margin과 height(100%)로 선언해도됨 */
       }
 
       a {
@@ -55,6 +65,8 @@
         text-decoration-line: none;
         color: black;
         font-weight: bold;
+        /* display :block, padding속성을 줘도됨*/
+        /* block 설정하는 이유 */
       }
 
       .top-btn {

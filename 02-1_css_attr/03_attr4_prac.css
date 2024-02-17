@@ -31,7 +31,37 @@ header {
 
 /* TODO: header1 ~ 3까지 완성해주세요! */
 
-/* header1 */
+/* header1  */
+/* .header1 > * {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.header1 .menus { */
+/* height: 100%; */
+/* justify-content: flex-end;
+  align-items: center;
+  border: 1px solid black;
+}
+.header1 ul {
+  display: flex;
+} */
+
+.header1 > ul > li {
+  padding: 0 10px;
+}
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header1 .menus {
+  display: flex;
+}
 
 /* header2 */
 .header2 .menus {
@@ -42,10 +72,20 @@ header {
     하지만 li들은 .header2 기준으로 세로 중앙정렬을 해야하기 때문에
     ul.menus는 .header2의 높이를 그대로 가져와서 li의 기준이 되어야 합니다.
     
-    border:1px solid black; 으로 ul.menus가 어느정도를 차지하는지 확인해보고
+     으로 ul.menus가 어느정도를 차지하는지 확인해보고
     height:100%가 있을 때와 없을 때를 비교해보세요!
     */
+  /* border: 1px solid black; */
   height: 100%;
+  /* display: flex; = inline-block이랑 같은 느낌 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header2 {
+  /* display: flex; */
+  justify-content: space-between;
 }
 
 /* header3 */
@@ -56,9 +96,9 @@ header {
   align-items: center;
 }
 
-.header3 > * {
+/* .header3 > * {
   border: 1px solid black;
-}
+} */
 
 .header3 ul {
   display: flex;
@@ -66,4 +106,28 @@ header {
 
 .header3 ul li {
   padding: 0 10px;
+}
+
+/* header4 */
+.text {
+  display: flex;
+  /* flex를 선언하지않으면 표현되지않음 */
+  justify-content: center;
+  background-color: lightpink;
+}
+
+.header4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header4 ul {
+  display: flex;
+}
+.header4 ul li {
+  padding: 0 10px;
+}
+/* 왜 1만 지정해줘도 왼쪽정렬이 되지? */
+.header4 .left {
+  flex-grow: 1;
 }

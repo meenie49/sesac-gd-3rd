@@ -2,6 +2,8 @@
   /* 태그에 기본적으로 적용되어 있는 margin,padding 없애기 */
   /* border-box 안주면 검색창 이상해짐 */
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 header {

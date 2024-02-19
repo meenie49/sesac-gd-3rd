@@ -32,15 +32,47 @@ header .inner .logo {
   color: aliceblue;
 }
 
+.menu {
+  line-height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.menu > li {
+  padding: 0 10px;
+  font-weight: 600;
+}
+
 .small-menu,
 .menu-bar {
   display: none;
 }
+.menu-bar {
+  position: absolute;
+}
 
 @media screen and (max-width: 768px) {
+  header {
+    height: 60px;
+  }
   .small-menu,
   .menu-bar {
     display: block;
+    text-align: center;
+  }
+  .small-menu > li {
+    padding: 10px 0;
+    background-color: rgb(227, 240, 245);
+  }
+  header .inner .logo {
+    /* height의 크기값에 맞게 line-height 값을 다시 선언*/
+    /* .logo만 했을 때는 안됨 -> 길게 선언하였더니 됨 */
+    line-height: 60px;
+    left: calc(50vw - 25px);
+  }
+  .menu-bar {
+    line-height: 60px;
+    top: 0;
+    left: 90vw;
   }
   .menu {
     display: none;

@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  /* 위치 적용가능 하도록 */
+  position: relative;
+  /* 애니메이션 사용 */
+  animation-name: my-ani;
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+  /* 몇번 반복시킬지 */
+  animation-iteration-count: 2;
+  animation-timing-function: linear;
+}
+
+@keyframes my-ani {
+  /* 
+  애니메이션 시작하자마자 -> 0% 
+  애니메이션 끝 -> 100%
+  */
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 200px;
+  }
+  50% {
+    left: 400px;
+  }
+  75% {
+    left: 200px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.bounce-ball1 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 100px;
+  top: 0;
+  border-radius: 50%;
+  background-color: lightblue;
+
+  /* animation-name: bounce1;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; <- 계속해서 시작점이 바뀌어서 애니메이션이 더 자연스럽게 연결로딜 수 있도록 함
+    */
+  /* 단축 프로퍼티 */
+  /* 이름 지속시간 반복형태 지연시간 반복횟수 애니메이션 방향 */
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: bounce1 1s ease-in infinite alternate;
+}
+
+@keyframes bounce1 {
+  /* 종료 위치 조정하는 속성 */
+  to {
+    top: 0;
+  }
+
+  /* 시작 위치 조정하는 속성 */
+  from {
+    top: 300px;
+  }
+}
+
+.bounce-ball2 {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+  /* 위치를 다르게 하기위해 relative */
+  position: absolute;
+  border-radius: 50%;
+
+  /* 이 3개가 필수 속성 */
+  animation-name: bounce2;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  /* 단축 속성 */
+  animation: bounce2 2s infinite;
+}
+
+@keyframes bounce2 {
+  /* to, from이 꼭 같이 있어야함 */
+  from,
+  to {
+    bottom: 0;
+    animation-timing-function: ease-out;
+    /* 0px에서 정상 속도로 시작해, 천천히 속도를 줄이면서 300px이 됨 */
+    width: 60px;
+  }
+  50% {
+    width: 100px;
+    bottom: 300px;
+    animation-timing-function: ease-in;
+    /* 300px에서 천천히 시작해, 0px로 가면서 정상 속도로 끝남 */
+  }
+}
+
+.border {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* 참고) 배경색 그라데이션 및 그림자 적용 */
+  background-color: gold;
+  background: linear-gradient(45deg, yellow, orange, 70%, orangered);
+  /* 그림자 : x , y, z 축 inset은 내부에 그림자 생기도록 */
+  box-shadow: -5px 5px 10px inset rgba(51, 51, 51, 0.5);
+
+  position: absolute;
+  animation-name: goldball;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes goldball {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100vw - 100px);
+  }
+  50% {
+    top: calc(100vh - 100px);
+    left: calc(100vw - 100px);
+  }
+  75% {
+    top: calc(100vh - 100px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+
+  /* calc속성 사용할 때는 꼭 - 앞뒤로 간격 주기 */
+  /* 원크기가 100px이므로 너비나 높이에서 빼야함 */
+  /* 0% {
+    transform: translate(0px);
+  }
+  25% {
+    transform: translate(calc(100vw - 100px), 0px);
+  }
+  50% {
+    transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+  }
+  75% {
+    transform: translate(0, calc(100vh - 100px));
+  }
+  100% {
+    transform: translate(0px);
+  } */
+}
+
+h2 {
+  margin-top: calc(100vh - 100px);
+}
+
+.text {
+  /* width: 100vh;
+  height: 100px;
+  */
+  position: relative;
+  animation-name: slidein;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slidein {
+  from {
+    top: 0;
+    left: 0;
+  }
+  to {
+    top: o;
+    left: 0;
+  }
+
+  /* from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0;
+    width: 100%;
+  } */
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .direction {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: skyblue;
+        margin: 20px;
+      }
+      @media screen and (min-width: 700px) {
+        .container {
+          flex-direction: row;
+        }
+        .direction {
+          background-color: black;
+        }
+      }
+
+      @media screen and (min-width: 500px) {
+        body {
+          background-color: skyblue;
+        }
+      }
+      @media screen and (max-width: 300px) {
+        body {
+          background-color: orange;
+        }
+      }
+      @media screen and (max-height: 300px) {
+        p {
+          font-family: "Courier New", Courier, monospace, sans-serif;
+        }
+      }
+      @media screen and (min-height: 500px) {
+        p {
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>미디어 쿼리 실습</p>
+    <br /><br /><br />
+    <div class="container">
+      <div class="direction direction1"></div>
+      <div class="direction direction2"></div>
+      <div class="direction direction3"></div>
+    </div>
+  </body>
+</html>

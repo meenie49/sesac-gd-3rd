@@ -17,16 +17,18 @@ header {
   height: 64px;
 }
 header .inner {
+  /* height: 100% <- 높이 전체 다쓴다는 의미 */
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
   /* 세로 중앙 배치 */
   line-height: 64px;
 }
 
 header .inner .menu-left {
-  padding: 0 10px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding: 0 10px;
 }
 
 header .inner .menu-left .logo img {
@@ -34,14 +36,23 @@ header .inner .menu-left .logo img {
 }
 header .inner .menu-left .menu {
   display: flex;
+  /* justify-contnet를 사용보다는 margin 사용해도 좋음 */
+  /* 그러나 내부요소가 많은 요소들은 justify-content가 낫고, 내부요소가 조금밖에 없으면 margin이 나음 */
   justify-content: space-evenly;
   margin: 0 10px;
 }
-header .inner .menu-left .menu li {
+/* li {
+  margin-right:10px
+ } */
+
+/* header .inner .menu-left .menu  */
+li {
   padding: 0 10px;
   list-style: none;
 }
-header .inner .menu-left .menu li a {
+/* header .inner .menu-left .menu li */
+/* li태그안에 text가 있는게 아니고 a 태그 안에 있음 a태그의 기본적인 스타일이 있기 때문에 a태그에 지정 */
+a {
   color: #545454;
 }
 
@@ -77,7 +88,11 @@ header .inner .menu-right .header__search {
 /* 돋보기 input 안으로 이동시키기*/
 /* 축으로 이동시킴 */
 header .inner .menu-right .header__search i {
+  /* y축으로 -50% 만큼 움직이겠다 */
   transform: translateY(-50%);
+  position: absolute;
+  top: 32px;
+  right: 20px;
 }
 
 input {
@@ -88,11 +103,6 @@ input {
   width: 510px;
   height: 35px;
 }
-header .inner .menu-right .header__search i {
-  position: absolute;
-  top: 32px;
-  right: 20px;
-}
 
 /* input 액션 */
 input:hover {
@@ -100,11 +110,13 @@ input:hover {
 }
 
 input:focus {
+  /* focus 했을때만 outline 속성 */
   outline: 2px solid #1dc078;
 }
 
 /* btn */
 .btn {
+  /* 손가락 커서 : 클릭할 수 있는 요소에 부여하는 것 */
   cursor: pointer;
 }
 
@@ -112,9 +124,11 @@ input:focus {
 .btn {
   height: 35px;
   margin: 0 4px;
+  padding: 0 4px;
   /* display 속성을 여기에 선언 */
   display: flex;
   align-items: center;
+  /* line-height: 35px; */
 }
 
 .btn--white {

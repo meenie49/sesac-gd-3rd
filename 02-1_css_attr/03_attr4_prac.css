@@ -61,6 +61,7 @@ header {
 
 .header1 .menus {
   display: flex;
+  /* margin-left: 10px <- padding이 아닌 이런식으로 간격을 줘도 됨 */
 }
 
 /* header2 */
@@ -83,10 +84,11 @@ header {
   align-items: center;
 }
 
-.header2 {
-  /* display: flex; */
-  justify-content: space-between;
-}
+/* 위에 선언만으로도 가능 */
+/* .header2 { 
+display: flex;
+ justify-content: space-between;
+} */
 
 /* header3 */
 

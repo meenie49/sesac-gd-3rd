@@ -1,0 +1,208 @@
+.img-box {
+  background-color: lightblue;
+  width: 400px;
+  height: 250px;
+}
+
+img {
+  /* 부모를 꽉채우게 하려면 -> 부모 너비가 400px 이므로 400px이 됨 */
+  width: 100%;
+  height: 100%;
+  /* 클릭할 수 있다는 의미로 손가락 커서 만들기 */
+  cursor: pointer;
+  border: 1px solid gold;
+}
+
+img:hover {
+  /* 
+    1. skew()
+    - 원하는 각도만큼 요소를 기울임
+    - x, y축 나누어 속성 부여 가능
+        - skewX(Xdeg)
+        - skewY(Ydeg)
+    - x축, y축 동시에 사용 원하는 경우
+        - skew(Xdeg,Ydeg)
+    */
+  /* y축 0을 기준으로 선언한 각도만큼 맨위끝점이 왼쪽으로 기울어짐 -> skewX */
+  /* x축 0을 기준으로 선언한 각도만큼 왼쪽끝점이 위쪽으로 기울어짐 -> skewY */
+  transform: skewX(30deg);
+  transform: skewY(30deg);
+  transform: skew(30deg, 30deg);
+
+  /* 
+  2. scale()
+  - 크기를 조절함 (확대, 축소)
+  - 1보다 큰 값: 해당 배수만큼 확대
+  - 0~1: 해당 배수만큼 축소
+  */
+  transform: scaleX(2);
+  transform: scaleY(0.5);
+  transform: scale(2, 0.5);
+
+  /* 
+  3. translate()
+  - 요소를 이동
+  - translateX(): x축을 기준으로 이동
+  - translateY(): y축을 기준으로 이동
+  - translateZ(): z축을 기준으로 이동
+  - translate(): x, y 축을 기준으로 이동
+  */
+  transform: translateX(100px);
+  transform: translateY(-100px);
+  /* z축 변화는 perspective를 사용하지 않을 경우 확인 불가 */
+  /* perspective가 보이는 영역 크기 */
+  transform: perspective(500px) translateZ(100px);
+
+  /* 2개일 때 단축속성 */
+  transform: translate(100px, 100px);
+  transform: translate(-100px, -100px);
+
+  /* 3개일 때 단축속성 -> translate3d */
+  transform: perspective(500px) translate3d(100px, 100px, 100px);
+
+  /* 
+  4. rotate()
+  - 회전
+  - 주어진 각도만큼 회전
+  - rotateX(): x축을 기준으로 회전
+  - rotateY(): y축을 기준으로 회전
+  - rotate(): 시계 방향으로 회전
+  */
+  /* perspective 사용 안하면 크기가 scale처럼 보임 */
+  transform: rotate(45deg);
+  transform: perspective(500px) rotateX(45deg);
+  transform: perspective(500px) rotateY(45deg);
+
+  transform: perspective(500px) rotateX(180deg);
+  /* 뒷면 보임 여부 */
+  backface-visibility: visible;
+  backface-visibility: hidden;
+}
+
+/* 바다 사진 실습 */
+.container {
+  width: 100vw;
+  height: 500px;
+  /* 여기서는 flex가 아닌 position 속성을 사용 */
+  /* 위치 지정 때문 */
+  position: relative;
+}
+.prac1,
+.prac2,
+.prac3 {
+  position: absolute;
+  transform: skewY(20deg);
+  /* 추가 */
+  transition: 1s;
+}
+.prac1:hover,
+.prac2:hover,
+.prac3:hover {
+  /* 원래대로 돌아오도록 */
+  transform: skew(0);
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  transform: perspective(500px) rotateX(45deg, 45deg);
+}
+
+.prac1 {
+  top: 180px;
+  left: 200px;
+  z-index: 3;
+}
+.prac2 {
+  top: 150px;
+  left: 350px;
+  z-index: 2;
+}
+.prac3 {
+  top: 120px;
+  left: 500px;
+}
+
+/* transition */
+/* transtion은 변화가 일어날 때 사용하는 속성 */
+
+/* 
+transition: 프로퍼티 값 변경 시, 일정 시간에 걸쳐 변화가 일어나도록 함
+- transition-property: 변화 대상 css 속성 지정 (default: all)
+- transtion-duration: 변화가 일어날 시간 (단위: s)
+- transition-timing-function: 변화 시간별 속도 지정 (default: ease)
+    - ease: 천천히 시작 -> 빨라짐 -> 느려짐
+    - linear: 속도 일정
+    - ease-in: 천천히 시작 -> 정상 속도
+    - ease-out: 정상 속도 -> 천천히 끝남
+    - ease-in-out: 천천히 시작 -> 정상 속도 -> 느려짐
+- transition-delay: 지연 시간 (단위: s)
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background-color: black;
+  /* transition 단축 속성은 지속시간만 작성 가능 */
+  /* property: all / timing-function: ease / delay: 0s가 기본적으로 지정됨 */
+}
+
+.box1:hover {
+  background-color: pink;
+  height: 120px;
+  width: 120px;
+  /* transition 속성 없으면 그냥 위에 속성 나타났다 사라짐 */
+  /* transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  transition-delay: 1s; */
+  /* 단축 속성 */
+  /* 순서 중요 */
+  /* transition: property duration timing-function delay */
+  /* property에 작성된 css속성만 transition 적용됨 */
+  /* width, height는 호버 하자마자 변하지만 배경색은 1초 뒤에 1초동안 ease-in 속도로 분홍색으로 변화함 */
+  /* 호버하면 우선 100px에서 선언해준 부분제외하고 120px로 바뀐뒤 선언해준 부분 120px로 천천히 바뀜 */
+  transition: background-color 1s ease-in 1s;
+}
+
+.box2:hover {
+  background-color: aqua;
+  /* x축으로 200px 2배 -> 기능 같이 사용하려면 한줄에 써야함 */
+  transform: translateX(200px) scaleX(2);
+}
+
+/* .box3:hover {
+  opacity: 0;
+} */
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background-color: skyblue;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.rectangle1:hover {
+  width: 200px;
+}
+
+.rectangle2:hover {
+  transform: skewX(-45deg) translateX(50%);
+}
+.rectangle3:hover {
+  background-color: red;
+  border-radius: 50%;
+  transform: translateX(300px) rotate(180deg);
+}
+.rectangle4:hover {
+  background-color: yellow;
+  transform: rotateY(360deg) scale(2) perspective(200px) translateY(25px);
+}
+
+.prac4 {
+  transform: perspective(400px) rotateX(30deg);
+}

@@ -24,6 +24,7 @@ header .inner {
   padding: 0 1.5rem;
 }
 
+/* 로고 큰 width에서 맨 왼쪽에 위치하려면? */
 header .inner .logo {
   line-height: 100px;
   position: absolute;

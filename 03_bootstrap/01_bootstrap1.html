@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Bootstrap - Utils<!-- (utils는 반복적으로 사용하는 함수를 사용하기
+      쉽도록하는것) -->
+    </title>
+    <!-- bootstrap CDN 불러오기 -->
+    <!-- bootstrap CSS CDN 링크 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap JS CDN 스크립트 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Bootstrap - Utils</h1>
+
+    <!-- background -->
+    <h2>background</h2>
+    <!-- 부트스트랩에서 제공하는 색상 -->
+    <div class="bg-primary">.bg-primary</div>
+    <div class="bg-secondary">.bg-secondary</div>
+    <div class="bg-success">.bg-success</div>
+    <div class="bg-danger">.bg-danger</div>
+    <div class="bg-warning">.bg-warning</div>
+    <div class="bg-info">.bg-info</div>
+    <div class="bg-light">.bg-light</div>
+    <!-- 띄어쓰기 하고 다른속성 입력가능 -->
+    <div class="bg-dark text-white">.bg-dark</div>
+    <!--  transparent: 투명으로 부모의 배경색이 보이게됨 -->
+    <div class="bg-primary">
+      parent
+      <div class="bg-transpartent">.bg-transpartent</div>
+    </div>
+
+    <!-- color -->
+    <h2>color</h2>
+    <p class="text-primary">.text-primary</p>
+    <p class="text-secondary">.text-secondary</p>
+    <p class="text-success">.text-success</p>
+    <p class="text-danger">.text-danger</p>
+    <p class="text-warning bg-dark">.text-warning</p>
+    <p class="text-info bg-dark">.text-info</p>
+    <p class="text-light bg-dark">.text-light</p>
+    <p class="text-dark">.text-dark</p>
+    <!--  -->
+    <p class="text-body">.text-body</p>
+    <!-- 텍스트 약간 회색 -->
+    <p class="text-muted">.text-muted</p>
+    <p class="text-white bg-primary">.text-white</p>
+
+    <!-- display -->
+    <!-- 블록요소건 인라인요소건 상관없이 선언된 속성으로 바꿔줌 -->
+    <h2>display</h2>
+    <!-- 
+        display: inline
+        - 컨텐트 크기만큼 크기를 가짐
+        - 줄바꿈 x
+    -->
+    <div class="d-inline bg-danger">.d-inline</div>
+    <div class="d-inline bg-primary">.d-inline</div>
+    <br />
+    <br />
+    <!-- 
+        display: block;
+        - width가 자신의 부모요소의 100%를 차지함 -> 가로 한 줄을 모두 차지
+        - 줄바꿈
+    -->
+    <div class="d-block bg-danger">.d-block</div>
+    <div class="d-block bg-primary">.d-block</div>
+    <br />
+    <br />
+    <!-- 
+        display: none;
+        - 아예 사라짐 -> 자리차지도 하지 않음
+    -->
+    <div class="d-none bg-primary">.d-none</div>
+    <br />
+    <br />
+    <!-- 
+        display: flex;
+        - 기본적으로 가로 방향으로 배치되고, 자신이 가진 컨텐트의 width만큼 너비 차지
+        - height는 컨테이너의 높이만큼 늘어남 (height 지정하지 않은 경우)
+     -->
+
+    <!-- space가 붙은 속성은 뒤에만 써도됨 -->
+    <div
+      class="parent d-flex justify-content-between align-items-center border"
+      style="height: 300px"
+    >
+      <div
+        class="child text-primary border"
+        style="width: 100px; height: 100px"
+      >
+        child
+      </div>
+      <div
+        class="child text-primary border"
+        style="width: 100px; height: 100px"
+      >
+        child
+      </div>
+      <div
+        class="child text-primary border"
+        style="width: 100px; height: 100px"
+      >
+        child
+      </div>
+      <div
+        class="child text-primary border"
+        style="width: 100px; height: 100px"
+      >
+        child
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <!-- border -->
+    <h2>border</h2>
+    <span class="border border-primary rounded">border</span>
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

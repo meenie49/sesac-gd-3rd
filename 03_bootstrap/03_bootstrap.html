@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap - Layout</title>
+    <!-- bootstrap CDN 불러오기 -->
+    <!-- bootstrap CSS CDN 링크 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icon cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- bootstrap JS CDN 스크립트 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        height: 70000px;
+        margin-top: 10vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        container
+        - 가장 기본적인 레이아웃 요소
+
+        .container: 반응형 고정 컨테이너
+        .container-fluid: 유동 컨테이너 (뷰포트 전체 너비 사용)
+
+     -->
+    <h2 class="text-center">Container</h2>
+    <!-- 양끝 여백을 줌, 화면크기가 달라져도 여백이 계속 있음-->
+    <!-- 모든 브레이크포인트마다 다 사용하고 싶으면 -->
+    <div class="container bg-primary">.container</div>
+    <!-- 양끝 다 채움 -->
+    <div class="container-fluid bg-warning">.container-fluid</div>
+    <br /><br />
+
+    <!-- breakpoint로 작성한 크기보다 화면 너비가 작아지면 뷰포트 전체 너비 사용 -->
+    <!-- <=576 이면 전체를 차지하게함 -->
+    <div class="container-sm bg-primary">.container</div>
+    <!-- <= 768 이면 전체를 차지하게함 -->
+    <div class="container-md bg-danger">.container</div>
+    <!-- <= 992 이면 전체를 차지하게함 -->
+    <div class="container-lg bg-info">.container</div>
+    <br /><br />
+
+    <!-- position -->
+    <h2>position</h2>
+    <!-- position: fix와 동일 -> 다른 요소의 위치 무시
+         -> margin 등을 사용해 레이아웃을 조정해야함 -->
+    <!-- 위에 고정되어 -->
+    <!-- <div class="fixed-top bg-success" style="height: 10vh">.fixed-top</div>
+    <div class="fixed-bottom bg-success" style="height: 10vh">
+      .fixed-bottom
+    </div> -->
+
+    <!-- position:sticky -> 해당 요소가 지정한 위치에 도달했을 때부터 지정한 위치에 고정 -->
+    <!-- 부모 요소 안에서만 고정 -->
+    <div style="height: 1000px; background-color: pink">
+      <div class="sticky-top bg-danger" style="z-index: 999">.sticky-top</div>
+    </div>
+    <!-- 마우스 우클릭- 추카옵션클릭 - git bash here - code . (현재위치를 vscode에서 열어라) -->
+    <!-- 아이폰용 cdn  -->
+    <i class="bi bi-award-fill"></i>
+    <!-- font-size -->
+  </body>
+</html>

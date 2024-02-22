@@ -56,21 +56,21 @@
     <!-- 수평, 수직으로 열리는 방식이 있음 -->
     <!-- 수직 -->
     <p>
-      <a
+      <!-- <a
         class="btn btn-primary"
         data-bs-toggle="collapse"
-        href="#"
+        href="#collapseExample"
         role="button"
         aria-expanded="false"
         aria-controls="collapseExample"
       >
         Link with href
-      </a>
+      </a> -->
       <button
         class="btn btn-primary"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#"
+        data-bs-target="#collapseExample"
         aria-expanded="false"
         aria-controls="collapseExample"
       >
@@ -87,6 +87,7 @@
     </div>
     <br />
     <br />
+
     <p>
       <!--
         aria-xx란?
@@ -116,6 +117,7 @@
     </div>
     <br />
     <br />
+
     <!-- accordion -->
     <!-- data-bs-target 이랑 aria-controls랑 id랑 맞춰야함 -->
     <h2>accordion</h2>
@@ -299,11 +301,12 @@
     <!-- carousel -->
     <h2>carousel</h2>
     <!-- data-bs-ride="carousel" data-bs-interval="초" 사용 시 자동으로 이미지 넘어감 -->
+    <!-- data-bs-interval: "1000" <- 1000이 1초 -->
     <div
       id="carouselExample"
       class="carousel slide"
       data-bs-ride="carousel"
-      data-bs-interval="3"
+      data-bs-interval="2000"
     >
       <div class="carousel-inner">
         <!-- active가 가장 먼저 보임 -->

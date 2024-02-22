@@ -3,6 +3,7 @@
 console.log("connected!");
 /* 변수에 값을 출력하고 싶을때는 ()만 */
 console.log(varName);
+// ; 은 문장의 끝이라는 뜻(문장의 .와 같음)
 
 // 변수 선언하고 사용하기
 /*
@@ -20,15 +21,14 @@ varName = "MINI"; /* varName 변수의 값이 "jeongmin" -> "MINI" 로 변경 */
 console.log("varName"); /* MINI 출력 */
 // 변수 선언과 값 할당을 동시에
 var varName2 = "lily";
-console.log(varName);
 
 // var의 이상한 점
 // 1. 변수를 동일한 이름으로 재선언 할 수 있음
 var varName2 = "lily";
-console.log(varName);
+console.log(varName); // lily 출력
 
 // 2. 변수를 선언하기 전 값을 할당할 수 있음
-// 잠점같아 보일 수 있으나, 유지보수할 때 최악임
+// 장점같아 보일 수 있으나, 유지보수할 때 최악임
 aa = 123;
 console.log(aa);
 
@@ -50,5 +50,5 @@ console.log(letName2); // 심청이 출력
 // let letName2 = "심봉사"; /* error: 중복 선언 불가 */
 // console.log(letName2);
 
-letName2 = "심봉사";
+letName2 = "심봉사"; /* 값 재할당 가능 */
 console.log(letName2);

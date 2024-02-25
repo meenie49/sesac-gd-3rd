@@ -92,3 +92,23 @@ function hello(name) {
 const username = 'jeongmin';
 hello(username);
 // hello();
+
+// 실습1
+function multifly(num1, num2) {
+  return num1 * num2;
+}
+console.log(multifly(3, 7));
+console.log(multifly(2, 2));
+
+//실습2
+let num3 = Number(prompt());
+// let square = num3 ** 2;
+// const square = function (num3) {
+//  return num ** 2;
+// }
+// console.log(square) 했더니 안됨
+const square = function (num3) {
+  console.log(num3 ** 2);
+};
+square(4);
+square(11);

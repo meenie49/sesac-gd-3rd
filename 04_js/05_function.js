@@ -94,9 +94,16 @@ hello(username);
 // hello();
 
 // 실습1
+// 매개변수 이름은 상관없으나 순서는 중요
+// 매개변수 겹쳐도 상관없음
 function multifly(num1, num2) {
+  // console.log('num1 : ', num1);  -> num : 값
+  // console.log('num2 : ', num2);  -> num : 값
   return num1 * num2;
+  // !주의! 함수 안의 return문 다음 코드는 실행하지 않음
 }
+// multifly(3,2)만 쓰면 출력이 안됨
+// 방법1. 아래와 같이 쓰거나, 방법2. return console(num1 * num2)
 console.log(multifly(3, 7));
 console.log(multifly(2, 2));
 
@@ -112,3 +119,7 @@ const square = function (num3) {
 };
 square(4);
 square(11);
+// function square(num) {
+//  return num ** 2
+// }
+// console.log(square(4));

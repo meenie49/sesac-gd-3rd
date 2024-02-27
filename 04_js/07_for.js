@@ -48,6 +48,7 @@ let result = 0;
 // }
 
 for (let i = 1; i <= n; i++) {
+  // 한번 돌 때마다 result에 값이 저장되며 출력은 i의 마지막 값에서 출력됨
   result = result + i;
   //   result += i;
   console.log(result);
@@ -78,7 +79,8 @@ for (let i = 0; i < numArr.length; i++) {
   // numSum += numArr[i];
   console.log(numSum);
 }
-console.log(numSum); // for문 밖에 쓰면 출력 한번만 되고, 안에 쓰면 돌때마다 출력됨
+// console.log()를 for문 밖에 쓰면 출력 한번만 되고, 안에 쓰면 돌때마다 출력됨
+console.log(numSum);
 
 // for문과 if문 함께 사용
 // 짝수만 출력
@@ -90,6 +92,7 @@ for (let i = 2; i <= 10; i += 2) {
 // 2. if문과 함께 사용
 for (let i = 2; i <= 10; i++) {
   if (i % 2 === 0) {
+    // 나머지가 0일 때만 출력됨
     console.log(i);
   }
 }
@@ -103,8 +106,8 @@ for (let i = 1; i < 10; i++) {
 }
 
 // 구구단 출력하기
-console.clear();
-const number = Number(prompt('구구단을 게산할 숫자를 입력해주세요.'));
+// console.clear();
+const number = Number(prompt('구구단을 계산할 숫자를 입력해주세요.'));
 // const number = 2;
 console.log(number + '단');
 for (let i = 1; i < 10; i++) {
@@ -120,5 +123,14 @@ for (let i = 0; i < 5; i++) {
 
   for (let j = 0; j < 10; j++) {
     console.log(`현재 i는 ${i}이고, j는 ${j}이다.`);
+  }
+}
+
+// 실습 4. 구구단
+let a = 9;
+for (i = 1; i <= a; i++) {
+  console.log(`---${i}단---`);
+  for (j = 1; j <= a; j++) {
+    console.log(`${i} x ${j} = ${i * j}`);
   }
 }

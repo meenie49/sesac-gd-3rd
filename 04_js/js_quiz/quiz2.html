@@ -65,15 +65,20 @@
     </p>
 
     <script>
-      function isDone() {
+      function isDone(time) {
+        if (time >= 16) {
+          console.log('true');
+        } else {
+          console.log('false');
+        }
         // TODO: 조건을 만족하는 isDone 함수를 작성해주세요.
       }
 
       // TODO: 해당 html 파일을 실행한 브라우저 콘솔창에서 isDone 함수를 호출해주세요!
-      // isDone(9);
-      // isDone(14);
-      // isDone(16);
-      // isDone(20);
+      isDone(9);
+      isDone(14);
+      isDone(16);
+      isDone(20);
     </script>
   </body>
 </html>

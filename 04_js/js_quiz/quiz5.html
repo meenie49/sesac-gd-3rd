@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js_quiz 4번</title>
+    <title>js_quiz 5번</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,7 @@
     </style>
   </head>
   <body>
-    <h1>퀴즈4. 주사위 숫자의 합이 4의 배수인지 판별하기</h1>
+    <h1>퀴즈5. 주사위 숫자의 합이 4의 배수인지 판별하기</h1>
     <div>
       * HTML의 script 태그 안에 미리 구조가 정의되어 있는 함수를 조건에 맞게
       수정해주세요!
@@ -73,15 +73,46 @@
     <p>(힌트) 조건이 중첩되어 있습니다!</p>
 
     <script>
-      function diceNumber() {
-        // TODO: 조건을 만족하는 diceNumber 함수를 완성해주세요.
+      // typeof '표현식', 변수, 함수
+      // 'undefined' , 'object' <- key와 value값을 갖거나 배열 등 , 'boolean', 'number', 'bigint', 'string', 'symbol', 'function'
+      // function diceNumber1(first, second) {
+      //   if (typeof first == 'number') {
+      //     first = Number(first);
+      //     if (typeof second !== 'number') second = Number(second);
+      //   } else if ((first + second) % 4 === 0) {
+      //     console.log('4의 배수');
+      //   } else if (
+      //     (first + second) % 4 === 1 ||
+      //     (first + second) % 4 === 2 ||
+      //     (first + second) % 4 === 3
+      //   ) {
+      //     console.log('4의 배수 아님');
+      //   } else {
+      //     console.log('Not a Number');
+      //   }
+      // }
+      // TODO: 조건을 만족하는 diceNumber 함수를 완성해주세요.
+      function diceNumber(first, second) {
+        if (typeof first === 'number') {
+          if (typeof second === 'number') {
+            if ((first + second) % 4 === 0) {
+              console.log('4의 배수');
+            } else {
+              console.log('4의 배수 아님');
+            }
+          } else {
+            console.log('Not a Number');
+          }
+        } else {
+          console.log('Not a Number');
+        }
       }
 
       // TODO: 해당 html 파일을 실행한 브라우저 콘솔창에서 diceNumber 함수를 호출해주세요!
-      // diceNumber(1, 2);
-      // diceNumber(5, 3);
-      // diceNumber('a', '2');
-      // diceNumber(1, '5');
+      diceNumber(1, 2);
+      diceNumber(5, 3);
+      diceNumber('a', '2');
+      diceNumber(1, '5');
     </script>
   </body>
 </html>

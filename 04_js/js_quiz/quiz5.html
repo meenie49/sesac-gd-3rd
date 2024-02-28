@@ -74,6 +74,7 @@
 
     <script>
       // typeof '표현식', 변수, 함수
+      // typerof 검사 결과값은 문자열 형식으로 나옴
       // 'undefined' , 'object' <- key와 value값을 갖거나 배열 등 , 'boolean', 'number', 'bigint', 'string', 'symbol', 'function'
       // function diceNumber1(first, second) {
       //   if (typeof first == 'number') {
@@ -107,6 +108,19 @@
           console.log('Not a Number');
         }
       }
+
+      // function diceNumber(first, second) {
+      // if (typeof first === 'number' && typeof second === 'number') {
+      //    const result = first + second;
+      //    if (result % 4 === 0) {
+      //      console.log('4의 배수');
+      //    } else {
+      //      console.log('4의 배수가 아님');
+      //    }
+      //  else {
+      //    console.log('Not a Number');
+      //  }
+      // }
 
       // TODO: 해당 html 파일을 실행한 브라우저 콘솔창에서 diceNumber 함수를 호출해주세요!
       diceNumber(1, 2);

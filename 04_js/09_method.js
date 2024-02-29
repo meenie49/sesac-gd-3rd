@@ -235,13 +235,44 @@ let mapArr = nums.map(function (n) {
 console.log(mapArr); // [100, 200, 300, 400, 500]
 
 // 실습 1. 배열에서의 반복
-for (let i = 1; i <= 100; i++) {
-  console.log(i);
-}
-let numbers1;
-// for (number1 of numbers1) {
-//     console(number1);
+// for문
+// for (let i = 1; i <= 100; i++) {
+// push를 이용해서 배열 끝에 추가
+//   console.log(i);
 // }
-// number1.forEach(function (num1) {
+// 빈 배열을 할당해준다.
+// numbers를 미리 선언해주지않고 for문 안에서 선언하면 console을 for문 밖에서 찍었을 때 에러가 뜬다
+// 되려면 for문 안에 찍어줘야 하는데 그럼 배열을 100번 찍게 됨
+let numbers = [];
+for (let i = 1; i <= 100; i++) {
+  numbers.push(i);
+}
+console.log(numbers);
+// for (let i = 1, numbers = []; i <= 100; i++) {
+//   numbers[i - 1] = i;
+//   console.log(numbers);
+// }
+
+// 실습 2. 배열의 합 구하기
+// for 문
+let sum1 = 0;
+for (let i = 1; i <= 100; i++) {
+  numbers.push(i);
+  sum1 += numbers[i];
+}
+console.log(sum1);
+
+// for of 문
+// let numbers2 = [number2];
+// for (number2 of numbers2) {
+//   if (number2 >= 1 && number2 <= 100) {
+//     numbers2.push(number2);
+//   }
+// }
+// console.log(number2);
+
+// forEach 문
+// let numbers3 = [];
+// numbers3.forEach(function (num1) {
 //   for (num1 = 1; num1 <= 100; num1++) console.log(num1);
 // });

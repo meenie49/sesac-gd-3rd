@@ -260,19 +260,23 @@ for (let i = 1; i <= 100; i++) {
   numbers.push(i);
   sum1 += numbers[i];
 }
-console.log(sum1);
+console.log([sum1]);
 
 // for of 문
-// let numbers2 = [number2];
-// for (number2 of numbers2) {
-//   if (number2 >= 1 && number2 <= 100) {
-//     numbers2.push(number2);
-//   }
-// }
-// console.log(number2);
+let sum2 = 0;
+for (num2 of numbers) {
+  sum2 += num2;
+  // 위에서 정의되어서 다시 구간 정의 필요없나?
+  // if (num2 >= 1 && num2 <= 100) {
+  // }
+}
+// 왜 10100이 나오는지 모르겠음
+console.log(sum2);
 
 // forEach 문
-// let numbers3 = [];
-// numbers3.forEach(function (num1) {
-//   for (num1 = 1; num1 <= 100; num1++) console.log(num1);
-// });
+let sum3 = 0;
+numbers.forEach(function (num3) {
+  sum3 += num3;
+});
+// 왜 10100이 나오는지 모르겠음
+console.log(sum3);

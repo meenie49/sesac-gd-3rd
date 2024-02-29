@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js_quiz 4번</title>
+    <title>js_quiz3. 3번</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,10 +36,11 @@
     </style>
   </head>
   <body>
-    <h1>퀴즈4. 오늘의 요일은?</h1>
+    <h1>퀴즈3. 오늘의 요일은?</h1>
     <div>
-      * HTML의 script 태그 안에 미리 구조가 정의되어 있는 함수를 조건에 맞게
-      수정해주세요!
+      이전에 푼 문제(js_quiz/quiz4.html)를 다른 방식으로 풀어볼까요? if
+      조건문으로 작성된 코드를 switch-case문으로 변경해주세요. 아래 조건은
+      어제와 동일합니다.
     </div>
     <ul>
       <li>
@@ -65,63 +66,67 @@
       </li>
       <li>
         함수 호출 예시:
-        <img src="./image/img5.png" alt="보기" />
+        <img src="./image/quiz3.png" alt="보기" />
       </li>
     </ul>
     <p>
-      (힌트) if, else if, else 키워드에 대해 기억하고 계신가요? 각각 무엇을
-      의미하는지 확인해주세요.
+      switch, case, default, break 키워드에 대해 잘 기억하고 계신가요? 각각
+      무엇을 의미하는지 확인해주세요.
       <a
-        target_="_blank"
-        href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/if...else"
+        target="_blank"
+        href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/switch#%EB%AC%B8%EB%B2%95"
         >MDN 사이드 이동</a
       ><br /><br />
-
-      <code>whatDay('5');</code>로 함수를 호출했을 때(숫자에 따옴표를 감싸서
-      문자열을 넣었을 때), null 값이 반환되고 있네요!
-      <code>whatDay()</code> 함수는
-      <strong>값과 타입을 모두 검사</strong>하는군요!
     </p>
 
     <script>
+      // TODO: if 조건문으로 작성한 코드를 switch-case 문으로 변경해주세요.
       function whatDay(day) {
-        if (day === 1) {
-          console.log('월');
-        } else if (day === 2) {
-          console.log('화');
-        } else if (day === 3) {
-          console.log('수');
-        } else if (day === 4) {
-          console.log('목');
-        } else if (day === 5) {
-          console.log('금');
-        } else if (day === 6) {
-          console.log('토');
-        } else if (day === 7) {
-          console.log('일');
-        } else {
-          console.log('null');
+        switch (day) {
+          case 1:
+            console.log('월');
+            break;
+          case 2:
+            console.log('화');
+            break;
+          case 3:
+            console.log('수');
+            break;
+          case 4:
+            console.log('목');
+            break;
+          case 5:
+            console.log('금');
+            break;
+          case 6:
+            console.log('토');
+            break;
+          case 7:
+            console.log('일');
+            break;
+          default:
+            console.log('null');
         }
-
-        // TODO: 조건을 만족하는 whatDay 함수를 완성해주세요.
-        // if (day == 1) {
-        // return '월';
-        // } else if (day == 2) {
-        // return '화';
-        //  } else if (day == 3) {
-        // return '수';
-        // } else if (day == 4) {
-        // return '목';
-        // } else if (day ==5) {
-        // return '금';
-        // } else if (day == 6) {
-        // return '토';
-        // } else if (day == 7) {
-        // return '일';
-        // } else {
-        // return null;
-        // }
       }
+      // function whatDay(day) {
+      //   if (day === 1) {
+      //     console.log('월');
+      //   } else if (day === 2) {
+      //     console.log('화');
+      //   } else if (day === 3) {
+      //     console.log('수');
+      //   } else if (day === 4) {
+      //     console.log('목');
+      //   } else if (day === 5) {
+      //     console.log('금');
+      //   } else if (day === 6) {
+      //     console.log('토');
+      //   } else if (day === 7) {
+      //     console.log('일');
+      //   } else {
+      //     console.log('null');
+      //   }
+      // }
 
       // TODO: 해당 html 파일을 실행한 브라우저 콘솔창에서 whatDay 함수를 호출해주세요!
       whatDay(3);

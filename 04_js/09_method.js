@@ -274,9 +274,9 @@ for (num2 of numbers) {
 console.log(sum2);
 
 // forEach 문
-let sum3 = 0;
-numbers.forEach(function (num3) {
-  sum3 += num3;
-});
+// let sum3 = 0;
+// numbers.forEach(function (num3) {
+//  sum3 += num3;
+// });
 // 왜 10100이 나오는지 모르겠음
-console.log(sum3);
+// console.log(sum3);

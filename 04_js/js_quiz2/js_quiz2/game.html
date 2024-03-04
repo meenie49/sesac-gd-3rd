@@ -124,26 +124,48 @@
     </p>
     
     <script>
-      console.log('버튼을 클릭하셨군요! 게임을 시작합니다.');
-      const answer = Math.floor(Math.random() * 10) + 1
-      let guessVaule = Number(prompt('UP and DOWN 게임을 시작합니다!'))
-      function startGame() {
-        while (guessVaule !== answer) {
-          if (guessVaule > answer) {
-            alert('Down')
-          } else if (guessVaule < answer) {
-            alert('Up')
-          } else if (guessVaule === 'q' || guessVaule === '포기') {
-            alert('포기하셨습니다..')
-          }
-           else {
-            alert('숫자를 잘못 입력하셨습니다.')
-          }
-          answer++;
-        }
-        console.log(guessVaule + '!!', '정답입니다!')
+      // console.log('버튼을 클릭하셨군요! 게임을 시작합니다.');
+      // const answer = Math.floor(Math.random() * 10) + 1
+      // let guessVaule = Number(prompt('UP and DOWN 게임을 시작합니다!'))
+      // function startGame() {
+      //   while (guessVaule !== answer) {
+      //     if (guessVaule > answer) {
+      //       alert('Down')
+      //     } else if (guessVaule < answer) {
+      //       alert('Up')
+      //     } else if (guessVaule === 'q' || guessVaule === '포기') {
+      //       alert('포기하셨습니다..')
+      //     }
+      //      else {
+      //       alert('숫자를 잘못 입력하셨습니다.')
+      //     }
+      //     answer++;
+      //   }
+      //   console.log(guessVaule + '!!', '정답입니다!')
+      //  }
         // TODO: [게임 시작하기] 버튼을 누르면 startGame() 함수가 실행되도록 설정해두었습니다. 함수 내부 코드를 채워주세요
-      }
+        function startGame() {
+          console.log('버튼을 클릭하셨군요! 게임을 시작합니다.');
+          let answer = Math.floor((Math.random() * 10) + 1) // 1 ~ 10 사이의 난수 생성
+
+          while (true) {
+            let guressValue = prompt('UP and DOWN 게임을 시작합니다!')
+
+            if (guessValue === '그만' || guessValue === 'q') {
+              alert('게임을 포기하셨습니다..😥')
+              break;
+            } else if (guessValue == answer) {
+              alert(`${answer}!! 정답입니다!!🤗`)
+              break;
+            } else if (guessValue > answer) {
+              alert('Down!');
+            }else if (guessValue < answer) {
+              alert('Up!');
+            } else {
+              alert('1 ~ 10 사이의 숫자만 입력해주세요.')
+            }
+          }
+        }
     </script>
   </body>
 </html>

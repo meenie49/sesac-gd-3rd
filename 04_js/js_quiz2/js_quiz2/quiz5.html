@@ -99,6 +99,7 @@
           // 안된 이유 -> lines가 감소된다고 생각하여 repeat에 lines를 적었는데
           // 생각해보니 lines 값은 변하지 않음 -> i 값이 변하는 거임
           console.log(star.repeat(i));
+          // console.og('*'.repeat(i)); <- 따로 선언안해주고 이렇게 선언해줘도 됨
         }
       }
 
@@ -120,6 +121,7 @@
             blank.repeat(lines - i) +
               star.repeat(2 * i - 1) +
               blank.repeat(lines - i)
+            // 세번째항 blank줄은 굳이 안써줘도됨
           );
         }
       }
@@ -148,6 +150,7 @@
             blank.repeat(lines - num4) +
               star.repeat(2 * num4 - 1) +
               blank.repeat(lines - num4)
+            // 세번째항 blank줄은 굳이 안써줘도됨
           );
         }
 
@@ -156,6 +159,7 @@
             blank.repeat(lines - num4) +
               star.repeat(2 * num4 - 1) +
               blank.repeat(lines - num4)
+            // 세번째항 blank줄은 굳이 안써줘도됨
           );
         }
       }
@@ -165,6 +169,7 @@
         for (let i = 1; i <= lines; i++) {
           console.log(
             blank.repeat(lines - i) + star.repeat(lines) + blank.repeat(i - 1)
+            // 세번째항 blank줄은 굳이 안써줘도됨
           );
         }
       }

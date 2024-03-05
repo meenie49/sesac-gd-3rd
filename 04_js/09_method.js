@@ -246,6 +246,8 @@ console.log(mapArr); // [100, 200, 300, 400, 500]
 let numbers = [];
 for (let i = 1; i <= 100; i++) {
   numbers.push(i);
+  //  for (let i = 0; i < 100; i++) {  <- 구간 0부터 하면
+  //    numArr.push(i + 1);
 }
 console.log(numbers);
 // for (let i = 1, numbers = []; i <= 100; i++) {
@@ -257,13 +259,14 @@ console.log(numbers);
 // for 문
 let sum1 = 0;
 for (let i = 1; i <= 100; i++) {
-  numbers.push(i);
+  // numbers.push(i); <- 굳이 안써도 됨
   sum1 += numbers[i];
 }
 console.log([sum1]);
 
 // for of 문
 let sum2 = 0;
+// numbers 배열에 있는 모든 요소를 num2 라고 지칭하면서 반복한다.
 for (num2 of numbers) {
   sum2 += num2;
   // 위에서 정의되어서 다시 구간 정의 필요없나?
@@ -274,9 +277,15 @@ for (num2 of numbers) {
 console.log(sum2);
 
 // forEach 문
-// let sum3 = 0;
-// numbers.forEach(function (num3) {
-//  sum3 += num3;
-// });
+let sum3 = 0;
+numbers.forEach(function (num3) {
+  sum3 += num3;
+});
 // 왜 10100이 나오는지 모르겠음
-// console.log(sum3);
+console.log(sum3);
+
+// 화살표 함수로 작성
+numArr.forEach((num) => {
+  sum3 = sum3 + num;
+  // sum3 += num
+});

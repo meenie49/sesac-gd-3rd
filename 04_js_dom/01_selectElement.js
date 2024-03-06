@@ -31,6 +31,9 @@ console.log(document.getElementsByClassName('others'));
 console.log('getElemetsByTagName');
 console.log(document.getElementsByTagName('div'));
 
+// get~ : 선택자만 쓰면됨
+// querySelector~ : #, . 등 같이 써줘야함
+
 // 4. querySelector
 // css에서 사용했던 선택자 이용해 요소 선택
 // 해당 css 선택자 중에서 일치하는 첫 번째 요소만 선택됨 -> 하나만 선택

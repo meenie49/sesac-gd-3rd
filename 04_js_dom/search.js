@@ -77,6 +77,7 @@ function displayProducts(products) {
   productList.innerHTML = ''; // 상품 목록 초기화
   products.forEach((product) => {
     // 프로덕트 하나하나를 객체라 함 key와 value로 접근
+    // key나 value 는  = 값으로 하고, 객체는 ''로 쓰기
     const productElement = document.createElement('div');
     // ``을 써서 창에 보이도록
     productElement.innerHTML = `
@@ -84,7 +85,7 @@ function displayProducts(products) {
         <p>상품 이름: ${product.name}, 가격: ${product.price}원</p>  
         `;
     productElement.addEventListener('click', () => {
-      window.location.href = `detail.html?id${product.id}`;
+      window.location.href = `detail.html?id=${product.id}`;
       // 쿼리스트링을 사용해 detail.html 파일로 이동하는데,
       // id라는 key로 product.id 값을 함께 전달
     });
@@ -96,6 +97,8 @@ function displayProducts(products) {
 // 검색 결과를 표시하는 함수
 function searchProducts(keyword) {
   const filteredProducts = products.filter((product) => {
+    // .filter() : 배열 내부에서 조건에 부합하는 요소만 찾아서 '배열로' 반환
+    // .find() : 배열 내부에서 조건에 부합하는 첫번째 요소를 찾아서 '값'으로 반환
     // return을 작성해야 포함하고 있는 배열을 반환해줌
     return product.name.includes(keyword);
   });

@@ -41,7 +41,7 @@ function changeColor() {
     for (let div of divs) {
       div.style.color = 'red';
     }
-
+    // length는 1부터이나 인덱스는 0부터이므로 -1 해줘야함
     divs[divs.length - 1].style.backgroundColor = 'blue';
   } else {
     alert('버튼 2를 클릭해 div를 추가해주세요!');
@@ -91,16 +91,16 @@ todoForm.addEventListener('submit', (e) => {
   // 매개변수를 받아 작성해야함
   e.preventDefault();
   console.log('submit');
-
+  // [] 속성은 대괄호 안에
   const todoInput = document.querySelector('input[name=todo]');
   console.log(todoInput);
   console.log(todoInput.value); // input 요소의 value를 가져옴
 
   // input 요소 자체의 value 수정 가능
-  // todoInput.value = '짜잔!';
+  //   todoInput.value = '짜잔!';
 
   // input의 value 변수에 저장
-  //   const todo = todoInput.value;
+  const todo = todoInput.value;
 
   //   const newTodo = document.createElement('li');
   // newTodo.innerText = todo;

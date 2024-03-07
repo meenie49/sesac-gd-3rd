@@ -74,7 +74,10 @@ console.log(window.location.search);
 // 예를 들어 ?id=1&name='meenie'&page=3 처럼 id, name, page와 같이
 // 많은 쿼리스트링을 전달할 경우
 // .get() method를 사용해 쉽게 해당 key의 값을 추출할 수 있음
+// window.location은 window라는 객체에 담긴 정보
+// window.location의 정보중 search라는 걸 선택하기위해 .search
 const urlParam = new URLSearchParams(window.location.search);
+
 // ?id=1&name='meenie'&page=3
 const productId = urlParam.get('id'); // 쿼리스트링 중 id 키의 값을 뽑아줌
 console.log(productId);

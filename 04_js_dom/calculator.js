@@ -16,3 +16,7 @@ calcul.addEventListener('click', function () {
   value11;
   value22;
 });
+
+// 폼 태그, 인풋창 4개, 버튼 2개 만들기
+// 인풋창에 넣은 값들을 연결해주기
+// 하나는 초기화 버튼 하나는 연산 버튼 함수로 만들기

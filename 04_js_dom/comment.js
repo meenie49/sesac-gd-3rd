@@ -79,3 +79,18 @@ commentForm.addEventListener('submit', (e) => {
     </form>
     <ul class="commentresult"></ul> */
 //}
+
+// 사용자 입력한 값을 가져옴
+// 문자열인 값만 가져오는 것임
+// function submitComment() {
+//   const userId = document.getElementById('userId').value;
+//   const content = document.getElementById('content').value;
+//   const ul = document.getElementById('commentContainer');
+
+//   const li = document.createElement('li');
+//   li.innerText = `${userId} - ${content}`;
+//   ul.appent(li);
+
+//   document.getElementById('userId').value = '';
+//   document.getElementById('content').value = '';
+// }

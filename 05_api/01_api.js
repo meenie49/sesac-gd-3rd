@@ -72,6 +72,7 @@ setTimeout 내부의 코드를 실행
 //   userId = 'meenie'; // 서버에서 받아온 id
 
 //   console.log('서버에서 아이디를 성공적으로 받아옴');
+
 //   if (id === userId) {
 //     console.log('로그인 성공');
 //   } else {
@@ -108,6 +109,8 @@ setTimeout 내부의 코드를 실행
 //       }, 1000);
 //     }, 1000);
 //   }, 1000);
+
+// -----------------------------------------------------------------
 
 // Promise
 // Promise를 사용해 비동기 처리를 구현하는 예시
@@ -265,7 +268,7 @@ async function getMovieData() {
     // ? 뒤에 오는값 부터 파라미터
     // i와 그 값과 apikey와 그 값이 들어가 있음 -> &&연산자로 연결
     // s는 필수값으로 넣어줘야했음
-    `http://www.omdbapi.com/?i=tt3896198&apikey=5de0113&s=${word}`
+    `api키&s=${word}`
   );
   const movieData = await response.json();
   // response 실행

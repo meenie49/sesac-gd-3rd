@@ -16,4 +16,3 @@ import consoleNameMain from './02_util.js';
 // import plus, { minus } from './02_util.js';
 consoleName('meenie');
 consoleName('meenie33');
-consoleName('meenie33');

@@ -314,7 +314,7 @@ const postPost = () => {
     body: JSON.stringify({
         title: '제목제목제목',
         body: '게시물 내용내용내용'
-        userId: 1,
+        userId: '1',
     }),
     headers: {
         // 데이터를 보내려는 타입이 json

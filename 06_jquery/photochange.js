@@ -11,4 +11,5 @@ $('.btn').click((e) => {
   console.log(imgName);
   // apple, bananas, grapes, peaches 중 클릭한 btn의 아이디 값으로 저장
   $('.fruit').attr('src', `./img/${imgName}.jpg`);
+  $('.fruit').attr('src', `./img/${imgName}.jpg`);
 });

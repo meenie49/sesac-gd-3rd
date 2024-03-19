@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  font-family: 'Pretendard-Regular';
+}
+
+body {
+  margin: 0;
+  background-color: rgb(250, 238, 238);
+}
+
+.mypage_nav {
+  margin: 0 auto;
+}
+
+.panel_body {
+  padding: 5px 0;
+  display: none;
+}
+.active .panel_body {
+  /* active가 있으면 그 패널바디가 화면에 다시 나타나게 */
+  display: block;
+}
+/* .mypage_nav {
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgba(255, 143, 143, 0.6);
+}
+
+
+.mypage_nav ul li {
+    list-style: none;
+  padding: 5px 0;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.mypage_nav ul li.on {
+  max-height: 600px;
+}
+
+.accordion_nav {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+} */
+
+/* ul태그에 하면 각 li가 아닌 리스트테두리에 적용됨
+.mypage_nav ul {
+} 
+*/
+/* .mypage_nav ul li div라고 했을때는 호버적용 안됨
+.mypage_nav li :hover {
+    background-color: green;
+}
+*/

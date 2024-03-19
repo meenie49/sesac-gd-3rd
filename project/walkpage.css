@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Pretendard-Regular';
+}
+
+.topbutton {
+  margin: 5px 0;
+  height: 30px;
+  /* 
+  weather 버튼만 안보였는데 그이유는 div라서 한줄 다차지해
+  밑에 있어서 맵에 가려짐 ->  display flex 해줌
+*/
+  display: flex;
+  /* 양끝에 붙도록 */
+  justify-content: space-between;
+}
+.back {
+  background-image: url('./img/arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+.weather {
+  background-image: url('./img/sun.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+/* 
+.mapprofile {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+} */
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+.walkinfo {
+  /* flex랑 flex속성은 적용할 대상의 부모요소에 */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 0;
+  /* 내부 텍스트 요소 중앙정렬 */
+  text-align: center;
+}
+.number {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.walkbutton {
+  display: flex;
+  justify-content: center;
+  /* 시작일때는 center였다가 누르고나서는 space-evenly */
+}
+.ing {
+  width: 50px;
+  background-image: url('./img/pause.png');
+  /* size 안써주니 안나왔음 */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* display none 이였다가 누르면 나타나도록 */
+  border-radius: 25px;
+}
+.walkstart {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #ff8f8f;
+  border-radius: 10px;
+}
+
+@media (min-width: 720px) {
+  #map,
+  .topbutton,
+  .walkinfo,
+  .walkbutton {
+    display: none;
+  }
+}

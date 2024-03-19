@@ -5,58 +5,132 @@
   font-weight: 400;
   font-style: normal;
 }
+
 * {
   font-family: 'Pretendard-Regular';
 }
-
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
 body {
-  margin: 0;
+  margin-top: 20px;
   background-color: rgb(250, 238, 238);
 }
 
-.mypage_nav {
+/* 마이페이지 네브바 */
+.asidenav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+/* 프로필 */
+.profileinfo {
+  margin-bottom: 20px;
+}
+.profilephoto {
+  background-color: lightgray;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
   margin: 0 auto;
 }
-
+.profilename {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 8px;
+}
+.mypage_nav {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: rgba(255, 143, 143, 0.6);
+}
+.mypagenav_acc {
+  margin: 0 auto;
+  padding: 10px 0;
+  /* 패널헤드랑 바디에 각각 center 준거랑 같음 */
+  text-align: center;
+}
+.panel_head {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 0;
+}
 .panel_body {
-  padding: 5px 0;
+  padding: 4px 0;
+  margin: 0 auto;
   display: none;
 }
 .active .panel_body {
   /* active가 있으면 그 패널바디가 화면에 다시 나타나게 */
   display: block;
+  transition-duration: 1s;
 }
-/* .mypage_nav {
-  width: 200px;
+
+.rightpart {
+  margin-top: 40px;
+}
+/* 루미 */
+.lumi {
+  display: flex;
+  flex-direction: column;
+  /* 요소를 중간으로 모아줌 */
+  justify-content: center;
+  width: 50vw;
+}
+.mylumi {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 50px;
+}
+.lumi_total,
+.lumi_exchange,
+.lumi_collect {
+  cursor: pointer;
+  background-color: white;
+  padding: 0 8px;
   border-radius: 10px;
-  background-color: rgba(255, 143, 143, 0.6);
+  border: 1px solid gray;
+}
+.lumi_total,
+.lumi_collect {
+  display: flex;
+  justify-content: space-between;
 }
 
-
-.mypage_nav ul li {
-    list-style: none;
-  padding: 5px 0;
+.lumi_total {
+  width: 80vw;
+  margin-right: 10px;
+  line-height: 50px;
+}
+.lumi_exchange {
+  width: 20vw;
   text-align: center;
-  overflow: hidden;
-  transition: 0.3s;
+  padding-top: 4px;
+}
+.lumi_collect {
+  height: 40px;
+  line-height: 40px;
 }
 
-.mypage_nav ul li.on {
-  max-height: 600px;
+article {
+  margin-top: 40px;
+  border: 1px solid black;
 }
 
-.accordion_nav {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-} */
-
-/* ul태그에 하면 각 li가 아닌 리스트테두리에 적용됨
-.mypage_nav ul {
-} 
-*/
-/* .mypage_nav ul li div라고 했을때는 호버적용 안됨
-.mypage_nav li :hover {
-    background-color: green;
+.reservbutton {
+  display: flex;
 }
-*/
+.now,
+.past,
+.cancel {
+  background-color: white;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 0 8px;
+}

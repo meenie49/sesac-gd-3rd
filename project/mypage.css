@@ -1,13 +1,21 @@
-@font-face {
+/* @font-face {
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
     format('woff');
   font-weight: 400;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-  font-family: 'Pretendard-Regular';
+  font-family: 'GmarketSansMedium';
 }
 main {
   position: relative;
@@ -16,7 +24,7 @@ main {
 }
 body {
   margin-top: 20px;
-  background-color: rgb(250, 238, 238);
+  background-color: rgb(238, 236, 236);
 }
 
 /* 마이페이지 네브바 */
@@ -118,19 +126,171 @@ body {
   line-height: 40px;
 }
 
+/* 마이페이지 항목 펼쳐지는 부분 */
 article {
   margin-top: 40px;
   border: 1px solid black;
+  /* .reservation 이 아닌 article에 주니까 패딩 먹음 */
+  padding: 8px;
 }
-
+/* --------------------------------------------------------- */
+/* 예약 내역 */
+/* 예약버튼 나열 */
 .reservbutton {
   display: flex;
+  margin-bottom: 40px;
 }
+/* 현재예약, 지난예약, 취소된예약 */
 .now,
 .past,
 .cancel {
   background-color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 8px;
-  margin: 0 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+/* 예약항목에 들어간 정보 나열 */
+.reservinfo {
+  display: flex;
+}
+/* 예약항목 형태 */
+.reservitem {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 8px;
+  border: 1px solid gray;
+}
+.reservname {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.reservdate {
+  font-size: 14px;
+}
+.hospitalreserv,
+.placereserv,
+.salonreserv {
+  height: 50vh;
+  background-color: rgb(208, 209, 209);
+  padding: 20px;
+}
+
+/* 변경 버튼 */
+.changebutton {
+  cursor: pointer;
+  padding: 0 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 143, 143, 0.6);
+}
+
+/* 예약내역 존재여부 */
+.reservation,
+.myhospital {
+  display: none;
+}
+
+.reservation,
+.myplace {
+  display: none;
+}
+
+.reservation,
+.mysalon {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 나의 글 */
+/* 게시글 항목이름 */
+.postitemtitle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  font-weight: 600;
+  background-color: aliceblue;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
+}
+/* 작성일 & 댓글 */
+.postitem {
+  width: 200px;
+  display: flex;
+  justify-content: right;
+  border: 1px solid black;
+}
+.postcomment {
+  margin-left: 100px;
+}
+/* 게시글항목 형태 */
+.postwriting {
+  background-color: rgb(208, 209, 209);
+  height: 50vh;
+  border-radius: 10px;
+}
+.mypostitem {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 8px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.mypostinfo {
+  width: 300px;
+  display: flex;
+  justify-content: left;
+  border: 1px solid black;
+}
+
+.mypostcomment {
+  margin-left: 80px;
+}
+
+/* 내 댓글 */
+.commentitemtitle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  font-weight: 600;
+  background-color: aliceblue;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
+}
+.commentwriting {
+  background-color: rgb(208, 209, 209);
+  height: 50vh;
+  border-radius: 10px;
+}
+.mycommentitem {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 8px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.mycommentwriting {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+
+  border: 1px solid black;
+}
+
+/* 나의글 존재여부 */
+.mypost {
+  display: block;
+}
+.mycomment {
+  display: none;
 }

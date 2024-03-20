@@ -13,6 +13,7 @@
 .topbutton {
   margin: 5px 0;
   height: 30px;
+  padding: 0 10px;
   /* 
   weather 버튼만 안보였는데 그이유는 div라서 한줄 다차지해
   밑에 있어서 맵에 가려짐 ->  display flex 해줌

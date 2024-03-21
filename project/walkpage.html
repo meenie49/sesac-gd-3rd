@@ -9,31 +9,43 @@
     <script defer src="./walkpage.js"></script>
     <!-- 원격에 있는 구글 서버로부터 구글맵api를 내려받기 위함 -->
     <!-- defer속성 안줬다고 안떴냐 -->
-    <script
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=aaaa&callback=walkMap"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/9517a7cfa5.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- ?key=내api키값&callback=호출되어야하는함수이름 -->
+    <!-- <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=내api키&callback=walkMap"
+      ></script> -->
   </head>
   <body>
     <header></header>
     <main>
       <!-- 상단 버튼 -->
+      <!-- 맵 -->
       <section>
         <div class="topbutton">
           <div class="back" , onclick="location.href='./mypage.html';"></div>
           <div class="weather" , onclick="location.href='./mypage.html';"></div>
         </div>
-      </section>
-      <!-- 맵 -->
-      <section>
         <!-- <div class="mapprofile"></div> -->
         <!-- 높이 지정해주지 않으면 영영 안나타남 -->
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
+        <!-- 지도를 표시할 div 입니다 -->
+        <div id="map" style="width: 100%; height: 350px"></div>
+
+        <script
+          type="text/javascript"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=
+aa"
+        ></script>
+        <script>
+          var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = {
+              center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+              level: 3, // 지도의 확대 레벨
+            };
+
+          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+          var map = new kakao.maps.Map(mapContainer, mapOption);
+        </script>
       </section>
       <!-- 산책 수치 -->
       <section>

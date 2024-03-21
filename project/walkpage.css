@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
     format('woff');
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
 }
 
 * {
-  font-family: 'Pretendard-Regular';
+  font-family: 'GmarketSansMedium';
 }
 
 .topbutton {
@@ -44,10 +44,10 @@
   height: 80px;
   border-radius: 40px;
 } */
-#map {
+/* #map {
   width: 100%;
   height: 600px;
-}
+} */
 
 .walkinfo {
   /* flex랑 flex속성은 적용할 대상의 부모요소에 */
@@ -85,7 +85,8 @@
   border-radius: 10px;
 }
 
-@media (min-width: 720px) {
+/* 조건 2개 쓸 때, and로 */
+@media (min-width: 720px) and (max-width: 480px) {
   #map,
   .topbutton,
   .walkinfo,

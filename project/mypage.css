@@ -2,7 +2,7 @@
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
     format('woff');
-  font-weight: 400;
+    font-weight: 400;
   font-style: normal;
 } */
 
@@ -20,23 +20,22 @@
 main {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 body {
   margin-top: 20px;
   background-color: rgb(238, 236, 236);
 }
 
-/* 마이페이지 네브바 */
+/* 마이페이지 왼쪽파트 */
 .asidenav {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
+  margin-right: 100px;
 }
+/* --------------------------------------------------------- */
 /* 프로필 */
-.profileinfo {
-  margin-bottom: 20px;
-}
 .profilephoto {
   background-color: lightgray;
   width: 160px;
@@ -45,85 +44,104 @@ body {
   margin: 0 auto;
 }
 .profilename {
-  font-size: 30px;
+  font-size: 2rem;
   text-align: center;
   margin-top: 8px;
 }
+/* --------------------------------------------------------- */
+/* 루미 */
+.lumi {
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  /* 요소를 양끝과 요소 사이 거리 다 동일하게 */
+  justify-content: space-evenly;
+  /* border: 1px solid lightgray; */
+}
+.lumi_total,
+.lumi_collect {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 0 8px;
+  background-color: white;
+}
+.lumi_total {
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+}
+.lumi_collect {
+  height: 40px;
+  line-height: 40px;
+}
+.lumiQ {
+  width: 70rem;
+}
+.lumiA {
+  cursor: pointer;
+  width: 30rem;
+  font-size: 0.8rem;
+  text-align: right;
+  border: 1px solid green;
+}
+.lumiA :hover {
+  /* 텍스트 스타일 */
+  text-decoration: underline;
+}
+
+/* .mylumi {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 50px;
+} */
+
+/* .lumi_exchange {
+  width: 20vw;
+  text-align: center;
+  padding-top: 4px;
+} */
+/* --------------------------------------------------------- */
+/* 마이페이지 네브바 */
 .mypage_nav {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border: 1px solid gray;
   border-radius: 10px;
-  background-color: rgba(255, 143, 143, 0.6);
+  background-color: white;
+}
+.mypagenav_acc:last-child {
+  border: none;
 }
 .mypagenav_acc {
-  margin: 0 auto;
-  padding: 10px 0;
+  /* margin: 0 auto; */
   /* 패널헤드랑 바디에 각각 center 준거랑 같음 */
   text-align: center;
+  border-bottom: 1px solid gray;
 }
 .panel_head {
+  padding: 20px 0;
   font-weight: 700;
   font-size: 16px;
-  padding: 8px 0;
 }
 .panel_body {
   padding: 4px 0;
-  margin: 0 auto;
   display: none;
 }
+
 .active .panel_body {
   /* active가 있으면 그 패널바디가 화면에 다시 나타나게 */
   display: block;
   transition-duration: 1s;
 }
-
+.panel_head :active {
+  border: 2px solid #ff8f8f;
+}
 .rightpart {
-  margin-top: 40px;
-}
-/* 루미 */
-.lumi {
-  display: flex;
-  flex-direction: column;
-  /* 요소를 중간으로 모아줌 */
-  justify-content: center;
-  width: 50vw;
-}
-.mylumi {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  height: 50px;
-}
-.lumi_total,
-.lumi_exchange,
-.lumi_collect {
-  cursor: pointer;
-  background-color: white;
-  padding: 0 8px;
-  border-radius: 10px;
-  border: 1px solid gray;
-}
-.lumi_total,
-.lumi_collect {
-  display: flex;
-  justify-content: space-between;
-}
-
-.lumi_total {
-  width: 80vw;
-  margin-right: 10px;
-  line-height: 50px;
-}
-.lumi_exchange {
-  width: 20vw;
-  text-align: center;
-  padding-top: 4px;
-}
-.lumi_collect {
-  height: 40px;
-  line-height: 40px;
+  margin-top: 50px;
 }
 
 /* 마이페이지 항목 펼쳐지는 부분 */
@@ -158,7 +176,7 @@ article {
 .reservitem {
   display: flex;
   justify-content: space-between;
-  width: 50vw;
+  width: 70vh;
   height: 50px;
   line-height: 50px;
   margin-bottom: 8px;
@@ -189,6 +207,7 @@ article {
 }
 
 /* 예약내역 존재여부 */
+/* .reservation을 다 해줬기 때문에 block을 해도 안나타났던것 */
 .reservation,
 .myhospital {
   display: none;
@@ -198,10 +217,9 @@ article {
 .myplace {
   display: none;
 }
-
 .reservation,
 .mysalon {
-  display: none;
+  display: block;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -222,16 +240,17 @@ article {
   width: 200px;
   display: flex;
   justify-content: right;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .postcomment {
   margin-left: 100px;
 }
 /* 게시글항목 형태 */
 .postwriting {
-  background-color: rgb(208, 209, 209);
+  background-color: rgb(219, 218, 218);
   height: 50vh;
-  border-radius: 10px;
+  border-radius: 20px;
+  padding: 10px;
 }
 .mypostitem {
   display: flex;
@@ -239,7 +258,7 @@ article {
   height: 50px;
   line-height: 50px;
   margin-bottom: 8px;
-  border: 1px solid gray;
+  border: 1px solid rgb(189, 188, 188);
   border-radius: 10px;
 }
 
@@ -247,7 +266,7 @@ article {
   width: 300px;
   display: flex;
   justify-content: left;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .mypostcomment {
@@ -288,9 +307,66 @@ article {
 }
 
 /* 나의글 존재여부 */
+.mywriting,
 .mypost {
-  display: block;
+  display: none;
 }
+.mywriting,
 .mycomment {
   display: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 내 정보 관리 */
+.inquirytop {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  /* text-align, line-height 다 안됐는데 align-item으로 함 */
+  align-items: center;
+  border: 1px solid black;
+}
+.back {
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/arrow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  line-height: 30px;
+  /* display: none; */
+}
+.inquiry {
+  font-size: 20px;
+  font-weight: 700;
+}
+.mobiledone {
+  background-color: lightblue;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+.mobiledone :hover {
+  background-color: red;
+}
+@media (max-width: 720px) {
+  .back {
+    display: block;
+  }
+  .mobiledone {
+    display: block;
+  }
+}
+.done {
+  background-color: lightblue;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+#textarea {
+  width: 50vw;
+  height: 30vw;
 }

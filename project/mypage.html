@@ -19,6 +19,26 @@
             <div class="profilephoto"></div>
             <div class="profilename">제리</div>
           </div>
+          <!-- 루미 -->
+          <div class="lumi">
+            <div class="lumi_total">
+              <div>내가 모은 루미</div>
+              <div>🌟30</div>
+            </div>
+            <!-- <div class="lumi_exchange">
+              <div>루미</div>
+              <div>교환하기</div>
+            </div> -->
+            <div class="lumi_collect">
+              <div class="lumiQ">루미를 더 받고 싶어요🌟</div>
+              <div
+                class="lumiA"
+                onclick="location.href='https://www.naver.com'"
+              >
+                모으러 가기
+              </div>
+            </div>
+          </div>
           <!-- 마이페이지네브바 -->
           <div class="mypage_nav">
             <div class="mypagenav_acc active">
@@ -28,7 +48,7 @@
               <div class="panel_body thisone">미용실</div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">나의 글</div>
+              <div class="panel_head">커뮤니티</div>
               <div class="panel_body thisone">내 게시글</div>
               <div class="panel_body thisone">내 댓글</div>
               <div class="panel_body thisone">반려 노트</div>
@@ -55,27 +75,8 @@
             </div>
           </div>
         </div>
-        <!-- 루미 -->
       </aside>
       <section class="rightpart">
-        <div class="lumi">
-          <div class="mylumi">
-            <div class="lumi_total">
-              <div>내가 모은 루미</div>
-              <div>🌟30</div>
-            </div>
-            <div class="lumi_exchange">
-              <div>루미</div>
-              <div>교환하기</div>
-            </div>
-          </div>
-          <div class="lumi_collect">
-            <div>루미를 더 받고 싶어요🌟</div>
-            <div onclick="location.href='https://www.naver.com'">
-              모으러 가기
-            </div>
-          </div>
-        </div>
         <!-- 항목별 페이지 -->
         <article>
           <!-- 예약 -->
@@ -201,6 +202,39 @@
                   <div class="mycommentdate">2024.03.10 12:00</div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="inquirysection">
+            <h2>1:1 문의</h2>
+            <div class="inquirytop">
+              <div class="back"></div>
+              <div class="inquiry">1:1 문의</div>
+              <div class="mobiledone">확인</div>
+            </div>
+            <div>
+              <form>
+                <label></label>
+                <label for="file">사진 및 동영상 첨부하기</label>
+                <br />
+                <input type="file" id="file" />
+              </form>
+            </div>
+            <div>
+              <input
+                type="text"
+                class="titlename"
+                placeholder="제목을 입력해주세요."
+              />
+            </div>
+            <div>
+              <!-- cols : 가로 너비 속성 rows : 세로 너비 속성 -->
+              <label for="textarea"></label>
+              <br />
+              <textarea
+                id="textarea"
+                placeholder="문의 내용을 입력해주세요."
+              ></textarea>
+              <div class="done">확인</div>
             </div>
           </div>
         </article>

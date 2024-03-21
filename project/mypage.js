@@ -36,3 +36,9 @@ for (let i = 0; i < mypagenav.length; i++) {
     this.classList.add('active');
   });
 }
+
+let reservbutton = document
+  .querySelector('.reservation')
+  .reservbutton.addEventListener(click, (e) => {
+    $(e.target).css('display', 'block');
+  });

@@ -25,6 +25,7 @@ main {
 body {
   margin-top: 20px;
   background-color: rgb(238, 236, 236);
+  height: 10000px;
 }
 
 /* 마이페이지 왼쪽파트 */
@@ -84,7 +85,7 @@ body {
   width: 30rem;
   font-size: 0.8rem;
   text-align: right;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 .lumiA :hover {
   /* 텍스트 스타일 */
@@ -146,6 +147,7 @@ body {
 
 /* 마이페이지 항목 펼쳐지는 부분 */
 article {
+  width: 80vh;
   margin-top: 40px;
   border: 1px solid black;
   /* .reservation 이 아닌 article에 주니까 패딩 먹음 */
@@ -181,6 +183,7 @@ article {
   line-height: 50px;
   margin-bottom: 8px;
   border: 1px solid gray;
+  border-radius: 6px;
 }
 .reservname {
   font-size: 20px;
@@ -193,6 +196,7 @@ article {
 .hospitalreserv,
 .placereserv,
 .salonreserv {
+  width: 70vh;
   height: 50vh;
   background-color: rgb(208, 209, 209);
   padding: 20px;
@@ -258,7 +262,7 @@ article {
   height: 50px;
   line-height: 50px;
   margin-bottom: 8px;
-  border: 1px solid rgb(189, 188, 188);
+  border: 1px solid rgb(224, 224, 224);
   border-radius: 10px;
 }
 
@@ -313,7 +317,7 @@ article {
 }
 .mywriting,
 .mycomment {
-  display: none;
+  display: block;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -321,15 +325,17 @@ article {
 .inquirytop {
   display: flex;
   justify-content: space-between;
+  width: 50vh;
   height: 40px;
   /* text-align, line-height 다 안됐는데 align-item으로 함 */
   align-items: center;
   border: 1px solid black;
+  display: none;
 }
 .back {
   width: 30px;
   height: 30px;
-  background-image: url('./img/arrow.png');
+  background-image: url('./img/back.png');
   background-size: contain;
   background-repeat: no-repeat;
   line-height: 30px;
@@ -347,14 +353,9 @@ article {
   border-radius: 8px;
   text-align: center;
 }
-.mobiledone :hover {
-  background-color: red;
-}
+
 @media (max-width: 720px) {
-  .back {
-    display: block;
-  }
-  .mobiledone {
+  .inquirytop {
     display: block;
   }
 }
@@ -366,7 +367,89 @@ article {
   border-radius: 8px;
   text-align: center;
 }
+.titlename {
+  width: 50vw;
+  height: 40px;
+  border-radius: 8px;
+}
 #textarea {
   width: 50vw;
   height: 30vw;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.inquiryarea {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+/* 파일첨부 버튼 수정 */
+/* 원래모양 없애기 */
+.filebox input[type='file'] {
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+/* 내가 지정할 모양 */
+.filebox {
+  border: 1px dashed gray;
+  border-radius: 6px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.filebox label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.filebox label img {
+  background-image: url('./img/plus.png');
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* 내 정보 관리 */
+/* 비밀번호 변경 */
+.pwinfo {
+  font-size: 18px;
+}
+.changenewpw {
+  margin-top: 30px;
+}
+.newpwtext,
+.newpwchecktext {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.newpwinput input,
+.newpwcheckinput input {
+  width: 480px;
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+.newpw {
+  margin-bottom: 20px;
+}
+.newpwcheck {
+  margin-bottom: 30px;
+}
+.pwbutton :hover {
+  background-color: red;
+  cursor: pointer;
+}
+.pwbutton {
+  width: 480px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid gray;
 }

@@ -163,7 +163,7 @@
           </div>
           <!-- 나의 글 -->
           <div class="mywriting">
-            <h2>나의 글</h2>
+            <h2>커뮤니티</h2>
             <div class="mypost">
               <h3>내 게시글</h3>
               <div class="postitemtitle">
@@ -206,18 +206,21 @@
           </div>
           <div class="inquirysection">
             <h2>1:1 문의</h2>
+            <h3></h3>
             <div class="inquirytop">
               <div class="back"></div>
               <div class="inquiry">1:1 문의</div>
               <div class="mobiledone">확인</div>
             </div>
             <div>
-              <form>
-                <label></label>
-                <label for="file">사진 및 동영상 첨부하기</label>
-                <br />
-                <input type="file" id="file" />
-              </form>
+              <h3>사진 및 동영상 첨부하기</h3>
+              <div class="filebox">
+                <form>
+                  <label for="file"><img src="./img/plus.png" alt="" /></label>
+                  <br />
+                  <input type="file" id="file" />
+                </form>
+              </div>
             </div>
             <div>
               <input
@@ -226,7 +229,7 @@
                 placeholder="제목을 입력해주세요."
               />
             </div>
-            <div>
+            <div class="inquiryarea">
               <!-- cols : 가로 너비 속성 rows : 세로 너비 속성 -->
               <label for="textarea"></label>
               <br />
@@ -234,7 +237,40 @@
                 id="textarea"
                 placeholder="문의 내용을 입력해주세요."
               ></textarea>
-              <div class="done">확인</div>
+              <div class="donebox">
+                <div class="done">확인</div>
+              </div>
+            </div>
+          </div>
+          <div class="myinfo">
+            <h2>내 정보 관리</h2>
+            <div class="pwchange">
+              <h3>비밀번호 변경</h3>
+              <div class="pwinfo">
+                회원님의 소중한 개인정보 보호를 위해<br />새로운 비밀번호를
+                등록해주세요.
+              </div>
+              <div class="changenewpw">
+                <div class="newpw">
+                  <div class="newpwtext">새 비밀번호</div>
+                  <div class="newpwinput">
+                    <input
+                      type="text"
+                      placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+                    />
+                  </div>
+                </div>
+                <div class="newpwcheck">
+                  <div class="newpwchecktext">새 비밀번호 확인</div>
+                  <div class="newpwcheckinput">
+                    <input
+                      type="text"
+                      placeholder="비밃번호를 다시 한번 입력해주세요."
+                    />
+                  </div>
+                </div>
+                <div class="pwbutton">변경하기</div>
+              </div>
             </div>
           </div>
         </article>

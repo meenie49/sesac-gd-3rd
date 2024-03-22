@@ -89,9 +89,12 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.walkstart:hover {
+  background-color: aliceblue;
+}
 
 /* 조건 2개 쓸 때, and로 */
-@media (min-width: 720px) and (max-width: 480px) {
+@media (max-width: 480px) {
   #map,
   .topbutton,
   .walkinfo,

@@ -42,3 +42,28 @@ let reservbutton = document
   .reservbutton.addEventListener(click, (e) => {
     $(e.target).css('display', 'block');
   });
+
+// 펫 사진 등록하면 미리보기 되도록
+function showimg() {
+  let newImg = document.querySelector('.showpetimg').lastElementChild;
+  newImg.style.visibility = 'visible';
+}
+
+function loadFile(input) {
+  let file = input.files[0];
+
+  let newImg = document.createElement('img');
+  newImg.setAttribute('class', 'img');
+
+  newImg.src = URL.createObjectURL(file);
+
+  // 새로 저장될 이미지의 크기
+  newImg.style.width = '200px';
+  newImg.style.height = '200px';
+  newImg.style.objectFit = 'contain';
+  newImg.style.margin = '10px';
+
+  // 이미지가 뒤에 추가되도록
+  let container = document.querySelector('.showpetimg');
+  container.append(newImg);
+}

@@ -29,12 +29,17 @@
         <!-- 높이 지정해주지 않으면 영영 안나타남 -->
         <!-- <div id="map"></div> -->
         <!-- 지도를 표시할 div 입니다 -->
-        <div id="map" style="width: 100%; height: 350px"></div>
 
+        <div id="map" style="width: 100%; height: 400px"></div>
+        <div style="display: flex; gap: 10px">
+          <button id="startButton">출발지1 지정</button>
+          <button id="endButton">목적지1 설정</button>
+          <button id="getDirectionButton">차량 경로 가져오기</button>
+        </div>
+        <!-- !!!!!!!여기 api수정 -->
         <script
           type="text/javascript"
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=
-aa"
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=aa"
         ></script>
         <script>
           var mapContainer = document.getElementById('map'), // 지도를 표시할 div

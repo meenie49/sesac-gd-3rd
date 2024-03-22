@@ -138,6 +138,11 @@ body {
   display: block;
   transition-duration: 1s;
 }
+.down {
+  background-image: url('./img/down.png');
+  background-size: contain;
+  width: 20px;
+}
 .panel_head :active {
   border: 2px solid #ff8f8f;
 }
@@ -394,12 +399,16 @@ article {
   border: 0;
 }
 /* 내가 지정할 모양 */
+.fbwhole {
+  display: flex;
+  flex-wrap: wrap;
+}
 .filebox {
   border: 1px dashed gray;
   border-radius: 6px;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -412,6 +421,14 @@ article {
   background-image: url('./img/plus.png');
   width: 20px;
   height: 20px;
+}
+.showpetimg {
+  height: 200px;
+  display: flex;
+}
+#file {
+  display: none;
+  /* visiblity는 보이지 않을뿐 존재하는 상태 */
 }
 
 /* ---------------------------------------------------------------------- */

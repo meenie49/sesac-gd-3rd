@@ -17,15 +17,20 @@
 * {
   font-family: 'GmarketSansMedium';
 }
-main {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
 body {
   margin-top: 20px;
   background-color: rgb(238, 236, 236);
   height: 10000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  width: 1080px;
 }
 
 /* 마이페이지 왼쪽파트 */
@@ -217,18 +222,17 @@ article {
 
 /* 예약내역 존재여부 */
 /* .reservation을 다 해줬기 때문에 block을 해도 안나타났던것 */
-.reservation,
+
 .myhospital {
   display: none;
 }
 
-.reservation,
 .myplace {
   display: none;
 }
-.reservation,
+
 .mysalon {
-  display: block;
+  display: none;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -322,7 +326,7 @@ article {
 }
 .mywriting,
 .mycomment {
-  display: block;
+  display: none;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -387,6 +391,11 @@ article {
   display: flex;
   flex-direction: column;
   align-items: right;
+}
+/* ---------------------------------------------------------------------- */
+/* 1:1 문의 존재 여부 */
+.inquirysection {
+  display: none;
 }
 
 /* 파일첨부 버튼 수정 */
@@ -469,4 +478,9 @@ article {
   text-align: center;
   border-radius: 10px;
   border: 2px solid gray;
+}
+/* ---------------------------------------------------------------------- */
+/* 내 정보 관리 존재여부 */
+.pwchange {
+  display: block;
 }

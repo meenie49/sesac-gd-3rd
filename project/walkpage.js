@@ -214,199 +214,229 @@
 //   arriveMarker.setImage(arriveImage);
 // });
 
-// 1. 지도 중심 이동하기
-window.addEventListener('DOMContentLoaded', () => {
-  const { kakao } = window;
+// // 1. 지도 중심 이동하기
+// window.addEventListener('DOMContentLoaded', () => {
+//   const { kakao } = window;
 
-  const mapContainer = document.getElementById('map'); // 지도를 표시한 곳
-  const mapOptions = {
-    // 지도의 옵션
-    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-    level: 3, //지도의 레벨(확대, 축소 정도)
-  };
+//   const mapContainer = document.getElementById('map'); // 지도를 표시한 곳
+//   const mapOptions = {
+//     // 지도의 옵션
+//     center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+//     level: 3, //지도의 레벨(확대, 축소 정도)
+//   };
 
-  const kakaoMap = new kakao.maps.Map(mapContainer, mapOptions);
-});
-// 2. 버튼을 누르면 지도의 중심이 이동
-const state = {
-  center: { lat: 33.452613, lng: 126.570888 },
-};
+//   const kakaoMap = new kakao.maps.Map(mapContainer, mapOptions);
+// });
+// // 2. 버튼을 누르면 지도의 중심이 이동
+// const state = {
+//   center: { lat: 33.452613, lng: 126.570888 },
+// };
 
-function initMap() {
-  const mapContainer = document.getElementById('map');
-  const mapOptions = {
-    center: new kakao.maps.LatLng(state.center.lat, state.center.lng),
-    level: 3,
-  };
+// function initMap() {
+//   const mapContainer = document.getElementById('map');
+//   const mapOptions = {
+//     center: new kakao.maps.LatLng(state.center.lat, state.center.lng),
+//     level: 3,
+//   };
 
-  const kakaoMap = new kakao.maps.Map(mapContainer, mapOptions);
+//   const kakaoMap = new kakao.maps.Map(mapContainer, mapOptions);
 
-  const moveButton = document.querySelector('.walkstart');
-  moveButton.addEventListener('click', () => {
-    state.center = { lat: 33.45058, lng: 126.574942 };
-    const newCenter = new kakao.maps.LatLng(state.center.lat, state.center.lng);
-    kakaoMap.setCenter(newCenter);
-  });
-}
+//   const moveButton = document.querySelector('.walkstart');
+//   moveButton.addEventListener('click', () => {
+//     state.center = { lat: 33.45058, lng: 126.574942 };
+//     const newCenter = new kakao.maps.LatLng(state.center.lat, state.center.lng);
+//     kakaoMap.setCenter(newCenter);
+//   });
+// }
 
-window.addEventListener('DOMContentLoaded', initMap);
+// window.addEventListener('DOMContentLoaded', initMap);
 
-// 3. 부드럽게 지도 이동하기
+// // 3. 부드럽게 지도 이동하기
+// var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+//   mapOption = {
+//     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+//     level: 3, // 지도의 확대 레벨
+//   };
+
+// var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// function setCenter() {
+//   // 이동할 위도 경도 위치를 생성합니다
+//   var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+
+//   // 지도 중심을 이동 시킵니다
+//   map.setCenter(moveLatLon);
+// }
+
+// function panTo() {
+//   // 이동할 위도 경도 위치를 생성합니다
+//   var moveLatLon = new kakao.maps.LatLng(33.45058, 126.574942);
+
+//   // 지도 중심을 부드럽게 이동시킵니다
+//   // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+//   map.panTo(moveLatLon);
+// }
+
+// // 4. 지도 위에 마커 표시하기
+// // let은 재선언 불가
+// map = null;
+// let pointObj = {
+//   startPoint: { marker: null, lat: null, lng: null },
+//   endPoint: { marker: null, lat: null, lng: null },
+// };
+
+// function initMap() {
+//   const mapContainer = document.getElementById('map');
+//   const mapOptions = {
+//     center: new kakao.maps.LatLng(33.450701, 126.570667),
+//     level: 3,
+//   };
+
+//   map = new kakao.maps.Map(mapContainer, mapOptions);
+
+//   // 현재 좌표
+//   document.getElementById('startButton').addEventListener('click', () => {
+//     setPoint({ lat: 33.452613, lng: 126.570888 }, 'startPoint');
+//   });
+//   // 목적지 좌표
+//   document.getElementById('endButton').addEventListener('click', () => {
+//     setPoint({ lat: 33.45058, lng: 126.574942 }, 'endPoint');
+//   });
+// }
+
+// function setCenter({ lat, lng }) {
+//   const moveLatLon = new kakao.maps.LatLng(lat, lng);
+//   map.panTo(moveLatLon);
+// }
+
+// function setPoint({ lat, lng }, pointType) {
+//   setCenter({ lat, lng });
+
+//   if (pointObj[pointType].marker !== null) {
+//     pointObj[pointType].marker.setMap(null);
+//   }
+
+//   const marker = new kakao.maps.Marker({
+//     position: new kakao.maps.LatLng(lat, lng),
+//   });
+//   marker.setMap(map);
+
+//   pointObj[pointType] = { marker, lat, lng };
+// }
+
+// document.addEventListener('DOMContentLoaded', initMap);
+
+// // 5. 경로 표시하기
+// async function getCarDirection() {
+//   const REST_API_KEY = 'a';
+//   const url = 'https://apis-navi.kakaomobility.com/v1/directions';
+
+//   const origin = `${pointObj.startPoint.lng},${pointObj.startPoint.lat}`;
+//   const destination = `${pointObj.endPoint.lng},${pointObj.endPoint.lat}`;
+
+//   const headers = {
+//     Authorization: `KakaoAK ${REST_API_KEY}`,
+//     'Content-Type': 'application/json',
+//   };
+
+//   const queryParams = new URLSearchParams({
+//     origin: origin,
+//     destination: destination,
+//   });
+
+//   const requestUrl = `${url}?${queryParams}`;
+
+//   try {
+//     const response = await fetch(requestUrl, {
+//       method: 'GET',
+//       headers: headers,
+//     });
+
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! Status: ${response.status}`);
+//     }
+
+//     const data = await response.json();
+
+//     console.log(data);
+//   } catch (error) {
+//     console.error('Error:', error);
+//   }
+//   // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
+//   var linePath = [
+//     new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),
+//     new kakao.maps.LatLng(33.452739313807456, 126.5709308145358),
+//     new kakao.maps.LatLng(33.45178067090639, 126.5726886938753),
+//   ];
+
+//   // 지도에 표시할 선을 생성합니다
+//   var polyline = new kakao.maps.Polyline({
+//     path: linePath, // 선을 구성하는 좌표배열 입니다
+//     strokeWeight: 5, // 선의 두께 입니다
+//     strokeColor: '#FFAE00', // 선의 색깔입니다
+//     strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+//     strokeStyle: 'solid', // 선의 스타일입니다
+//   });
+
+//   // 지도에 선을 표시합니다
+//   polyline.setMap(map);
+// }
+
+// 1. 현재 위치 찍기
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+  // 지도를 생성할때 필요한 기본 옵션
   mapOption = {
     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 3, // 지도의 확대 레벨
+    level: 10, // 지도의 확대 레벨
   };
+// console.log(mapOption); // center 와 level 정보를 보여줌
 
+// kakao.maps.Map은 카카오맵에서 제공하는 지도객체를 생성하는 생성자 함수 인자 두개를 가짐
+// mapContainer는 지도가 표시될 html요소
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-function setCenter() {
-  // 이동할 위도 경도 위치를 생성합니다
-  var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+// // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+// if (navigator.geolocation) {
+//   // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+//   navigator.geolocation.getCurrentPosition(function (position) {
+//     var lat = position.coords.latitude, // 위도
+//       lon = position.coords.longitude; // 경도
 
-  // 지도 중심을 이동 시킵니다
-  map.setCenter(moveLatLon);
-}
+//     var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+//       message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
 
-function panTo() {
-  // 이동할 위도 경도 위치를 생성합니다
-  var moveLatLon = new kakao.maps.LatLng(33.45058, 126.574942);
+//     // 마커와 인포윈도우를 표시합니다
+//     displayMarker(locPosition, message);
+//   });
+// } else {
+//   // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
 
-  // 지도 중심을 부드럽게 이동시킵니다
-  // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
-  map.panTo(moveLatLon);
-}
+//   var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+//     message = 'geolocation을 사용할수 없어요..';
 
-// 4. 지도 위에 마커 표시하기
-// let은 재선언 불가
-map = null;
-let pointObj = {
-  startPoint: { marker: null, lat: null, lng: null },
-  endPoint: { marker: null, lat: null, lng: null },
-};
+//   displayMarker(locPosition, message);
+// }
 
-function initMap() {
-  const mapContainer = document.getElementById('map');
-  const mapOptions = {
-    center: new kakao.maps.LatLng(33.450701, 126.570667),
-    level: 3,
-  };
+// // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+// function displayMarker(locPosition, message) {
+//   // 마커를 생성합니다
+//   var marker = new kakao.maps.Marker({
+//     map: map,
+//     position: locPosition,
+//   });
 
-  map = new kakao.maps.Map(mapContainer, mapOptions);
+//   var iwContent = message, // 인포윈도우에 표시할 내용
+//     iwRemoveable = true;
 
-  // 현재 좌표
-  document.getElementById('startButton').addEventListener('click', () => {
-    setPoint({ lat: 33.452613, lng: 126.570888 }, 'startPoint');
-  });
-  // 목적지 좌표
-  document.getElementById('endButton').addEventListener('click', () => {
-    setPoint({ lat: 33.45058, lng: 126.574942 }, 'endPoint');
-  });
-}
+//   // 인포윈도우를 생성합니다
+//   var infowindow = new kakao.maps.InfoWindow({
+//     content: iwContent,
+//     removable: iwRemoveable,
+//   });
 
-function setCenter({ lat, lng }) {
-  const moveLatLon = new kakao.maps.LatLng(lat, lng);
-  map.panTo(moveLatLon);
-}
+//   // 인포윈도우를 마커위에 표시합니다
+//   infowindow.open(map, marker);
 
-function setPoint({ lat, lng }, pointType) {
-  setCenter({ lat, lng });
-
-  if (pointObj[pointType].marker !== null) {
-    pointObj[pointType].marker.setMap(null);
-  }
-
-  const marker = new kakao.maps.Marker({
-    position: new kakao.maps.LatLng(lat, lng),
-  });
-  marker.setMap(map);
-
-  pointObj[pointType] = { marker, lat, lng };
-}
-
-document.addEventListener('DOMContentLoaded', initMap);
-
-// 5. 경로 표시하기
-pointObj = {
-  startPoint: { lat: 33.452613, lng: 126.570888 },
-  endPoint: { lat: 33.45058, lng: 126.574942 },
-};
-
-async function getCarDirection() {
-  // !!!!!!!!!!!!!여기 api키 바꾸기
-  const REST_API_KEY = 'aa';
-  const url =
-    'curl -v -X GET "https://apis-navi.kakaomobility.com/v1/directions?origin=127.11015314141542,37.39472714688412&destination=127.10824367964793,37.401937080111644&waypoints=&priority=RECOMMEND&car_fuel=GASOLINE&car_hipass=false&alternatives=false&road_details=false" \
-  -H "Authorization: KakaoAK ${REST_API_KEY}"';
-
-  const origin = `${pointObj.startPoint.lng},${pointObj.startPoint.lat}`;
-  const destination = `${pointObj.endPoint.lng},${pointObj.endPoint.lat}`;
-
-  const headers = {
-    Authorization: `KakaoAK ${REST_API_KEY}`,
-    'Content-Type': 'application/json',
-  };
-
-  const queryParams = new URLSearchParams({
-    origin: origin,
-    destination: destination,
-  });
-
-  const requestUrl = `${url}?${queryParams}`;
-
-  try {
-    const response = await fetch(requestUrl, {
-      method: 'GET',
-      headers: headers,
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    console.log(data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
-
-document
-  .getElementById('getDirectionButton')
-  .addEventListener('click', getCarDirection);
-
-//
-// let map = null;
-
-function initMap() {
-  //   const mapContainer = document.getElementById('map');
-  //   const mapOptions = {
-  //     center: new kakao.maps.LatLng(33.450701, 126.570667),
-  //     level: 3,
-  //   };
-
-  //   map = new kakao.maps.Map(mapContainer, mapOptions);
-
-  // 여기에 데이터를 가져와서 polyline을 표시하는 코드를 추가합니다.
-  // 예시 데이터를 사용하거나 실제 데이터를 가져와서 사용할 수 있습니다.
-  // 아래에 있는 코드는 예시 데이터를 기반으로 작성되었습니다.
-
-  const linePath = [
-    new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),
-    new kakao.maps.LatLng(33.452739313807456, 126.5709308145358),
-    new kakao.maps.LatLng(33.45178067090639, 126.5726886938753),
-  ];
-
-  const polyline = new kakao.maps.Polyline({
-    path: linePath,
-    strokeWeight: 5,
-    strokeColor: '#000000',
-    strokeOpacity: 0.7,
-    strokeStyle: 'solid',
-  });
-
-  polyline.setMap(map);
-}
-
-document.addEventListener('DOMContentLoaded', initMap);
+//   // 지도 중심좌표를 접속위치로 변경합니다
+//   map.setCenter(locPosition);
+// }

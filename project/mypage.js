@@ -28,6 +28,8 @@ mypagenav[1].addEventListner('click', function() {})
 mypagenav[2].addEventListner('click', function() {})
 ... 이렇게 다 쓸 수 없으므로 반복문으로 쓰기
 */
+
+// 네브바
 for (let i = 0; i < mypagenav.length; i++) {
   mypagenav[i].addEventListener('click', function () {
     for (let j = 0; j < mypagenav.length; j++) {
@@ -37,11 +39,11 @@ for (let i = 0; i < mypagenav.length; i++) {
   });
 }
 
-let reservbutton = document
-  .querySelector('.reservation')
-  .reservbutton.addEventListener(click, (e) => {
-    $(e.target).css('display', 'block');
-  });
+let reservbutton = document.querySelector('.reservation');
+reservbutton.addEventListener('click', (e) => {
+  e.style.display = 'block';
+  // $(e.target).css('display', 'block');
+});
 
 // 펫 사진 등록하면 미리보기 되도록
 function showimg() {
@@ -67,3 +69,47 @@ function loadFile(input) {
   let container = document.querySelector('.showpetimg');
   container.append(newImg);
 }
+
+// 네브바와 연결
+// function displayElement(event) {
+//   let displaytg = event.target;
+//   if ((displaytg.style.display = 'none')) {
+//     displaytg.style.display = 'block';
+//   } else {
+//     displaytg.style.display = 'none';
+//   }
+// }
+// function displayhp() {
+//   document.querySelector('.myplace').style.display = 'block';
+// }
+// function displaysal() {
+//   document.querySelector('.mysalon').style.display = 'block';
+// }
+// function displaypost() {
+//   document.querySelector('.mypost').style.display = 'block';
+// }
+// function displaycomm() {
+//   document.querySelector('.mycomment').style.display = 'block';
+// }
+// // function displaycon() {
+// //   document.querySelector('.myhospital').style.display = 'block';
+// // }
+// // function displaybp() {
+// //   document.querySelector('.myhospital').style.display = 'block';
+// // }
+// function displayinq() {
+//   document.querySelector('.inquirysection').style.display = 'block';
+// }
+// // function displayani() {
+// //   document.querySelector('.myhospital').style.display = 'block';
+// // }
+// function displaypw() {
+//   document.querySelector('.pwchange').style.display = 'block';
+// }
+// // function displayalarm() {
+// //   document.querySelector('.myhospital').style.display = 'block';
+// // }
+
+// function displayElement(event) {
+//   event.target.style.display = 'block';
+// }

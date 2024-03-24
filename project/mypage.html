@@ -42,35 +42,88 @@
           <!-- 마이페이지네브바 -->
           <div class="mypage_nav">
             <div class="mypagenav_acc active">
-              <div class="panel_head">
-                <div class="headname">예약 내역</div>
-                <div class="down"></div>
+              <div class="panel_head myhos" onclick="displayElement(event)">
+                예약 내역
               </div>
-              <div class="panel_body thisone">병원</div>
-              <div class="panel_body thisone">장소</div>
-              <div class="panel_body thisone">미용실</div>
+              <div
+                class="panel_body thisone myhos"
+                onclick="displayElement(event)"
+              >
+                병원
+              </div>
+              <div
+                class="panel_body thisone mypl"
+                onclick="displayElement(event)"
+              >
+                장소
+              </div>
+              <div
+                class="panel_body thisone mysa"
+                onclick="displayElement(event)"
+              >
+                미용실
+              </div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">커뮤니티</div>
-              <div class="panel_body thisone">내 게시글</div>
-              <div class="panel_body thisone">내 댓글</div>
+              <div class="panel_head navcomu" onclick="displayElement(event)">
+                커뮤니티
+              </div>
+              <div
+                class="panel_body thisone navpost"
+                onclick="displayElement(event)"
+              >
+                내 게시글
+              </div>
+              <div
+                class="panel_body thisone navcomment"
+                onclick="displayElement(event)"
+              >
+                내 댓글
+              </div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">북마크</div>
-              <div class="panel_body thisone">컨텐츠</div>
-              <div class="panel_body thisone">플레이스</div>
+              <div class="panel_head navbook" onclick="displayElement(event)">
+                북마크
+              </div>
+              <div
+                class="panel_body thisone navcontent"
+                onclick="displayElement(event)"
+              >
+                컨텐츠
+              </div>
+              <div
+                class="panel_body thisone navbplace"
+                onclick="displayElement(event)"
+              >
+                플레이스
+              </div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">1:1 문의</div>
+              <div class="panel_head navinqu" onclick="displayElement(event)">
+                1:1 문의
+              </div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">내 정보 관리</div>
-              <div class="panel_body thisone">반려동물 정보 변경</div>
-              <div class="panel_body thisone">비밀번호 변경</div>
-              <div class="panel_body thisone">결제 카드 관리</div>
+              <div class="panel_head navinfo" onclick="displayElement(event)">
+                내 정보 관리
+              </div>
+              <div
+                class="panel_body thisone navanichange"
+                onclick="displayElement(event)"
+              >
+                반려동물 정보 변경
+              </div>
+              <div
+                class="panel_body thisone navpwchange"
+                onclick="displayElement(event)"
+              >
+                비밀번호 변경
+              </div>
             </div>
             <div class="mypagenav_acc">
-              <div class="panel_head">알람 설정</div>
+              <div class="panel_head" onclick="displayElement(event)">
+                알람 설정
+              </div>
             </div>
           </div>
         </div>
@@ -80,8 +133,8 @@
         <article>
           <!-- 예약 -->
           <div class="reservation">
-            <h2>예약내역</h2>
-            <div class="myhospital">
+            <div class="myhospital myhos">
+              <h2>예약내역</h2>
               <h3>병원</h3>
               <div class="reservbutton">
                 <div class="now">현재 예약</div>
@@ -91,7 +144,7 @@
               <div class="hospitalreserv">
                 <div class="reservitem">
                   <div class="reservinfo">
-                    <div class="reservname">r강동동물병원</div>
+                    <div class="reservname">강동동물병원</div>
                     <div class="reservdate">2024.03.10 12:00</div>
                   </div>
                   <div
@@ -103,7 +156,8 @@
                 </div>
               </div>
             </div>
-            <div class="myplace">
+            <div class="myplace mypl">
+              <h2>예약내역</h2>
               <h3>장소</h3>
               <div class="reservbutton">
                 <div class="now">현재 예약</div>
@@ -125,7 +179,8 @@
                 </div>
               </div>
             </div>
-            <div class="mysalon">
+            <div class="mysalon mysa">
+              <h2>예약내역</h2>
               <h3>미용실</h3>
               <div class="reservbutton">
                 <div class="now">현재 예약</div>
@@ -162,8 +217,8 @@
           </div>
           <!-- 나의 글 -->
           <div class="mywriting">
-            <h2>커뮤니티</h2>
             <div class="mypost">
+              <h2>커뮤니티</h2>
               <h3>내 게시글</h3>
               <div class="postitemtitle">
                 <div class="posttitle">제목</div>
@@ -190,6 +245,7 @@
               </div>
             </div>
             <div class="mycomment">
+              <h2>커뮤니티</h2>
               <h3>내 댓글</h3>
               <div class="commentitemtitle">
                 <div class="commenttitle">댓글</div>
@@ -251,8 +307,8 @@
             </div>
           </div>
           <div class="myinfo">
-            <h2>내 정보 관리</h2>
             <div class="pwchange">
+              <h2>내 정보 관리</h2>
               <h3>비밀번호 변경</h3>
               <div class="pwinfo">
                 회원님의 소중한 개인정보 보호를 위해<br />새로운 비밀번호를

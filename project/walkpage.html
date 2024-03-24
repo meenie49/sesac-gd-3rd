@@ -23,7 +23,11 @@
       <section>
         <div class="topbutton">
           <div class="back" , onclick="location.href='./mypage.html';"></div>
-          <div class="weather" , onclick="location.href='./mypage.html';"></div>
+          <div
+            class="weatherbutton"
+            ,
+            onclick="location.href='./weather.html';"
+          ></div>
         </div>
         <!-- <div class="mapprofile"></div> -->
         <!-- 높이 지정해주지 않으면 영영 안나타남 -->
@@ -41,16 +45,6 @@
           type="text/javascript"
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=aa"
         ></script>
-        <script>
-          var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-            mapOption = {
-              center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-              level: 3, // 지도의 확대 레벨
-            };
-
-          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-          var map = new kakao.maps.Map(mapContainer, mapOption);
-        </script>
       </section>
       <!-- 산책 수치 -->
       <section>

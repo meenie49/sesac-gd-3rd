@@ -20,8 +20,8 @@ function fetchProducts() {
   fetch('./data.json')
     .then((response) => response.json())
     .then((data) => {
-        displayProduct(data);
-    });
+      displayProduct(data);
+    })
     .catch((err) => console.log('상품 데이터를 불러오는데 실패했습니다.'));
 }
 

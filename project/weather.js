@@ -96,20 +96,34 @@
 //   alert('좌표를 받아올 수 없음');
 // };
 
-let weather = document.querySelector('.weather');
+// let weather = document.querySelector('.w');
 
-weather.addEventListener('click', () => {
-  weather.style.display == 'block';
-});
+// weather.addEventListener('click', () => {
+//   weather.style.display == 'block';
+// });
 
-const button = document.querySelector('.button');
+// weatherButton.addEventListener('click', () => {
+//   modal.classList.remove('hidden');
+// });
+
+// modalCloseButton.addEventListener('click', () => {
+//   modal.classList.add('hidden');
+// });
+const weatherButton = document.getElementById('weatherbutton');
+const modalCloseButton = document.getElementById('modalclosebutton');
+const modal = document.getElementById('modalcontainer');
+
+const button = document.querySelector('.weatherbutton');
 const API_KEY = 'aa';
 const tempSection = document.querySelector('.temperature');
 const placeSection = document.querySelector('.place');
 const descSection = document.querySelector('.description');
 const iconSection = document.querySelector('.icon');
+const maxSection = document.querySelector('.maxtemp');
+const minSection = document.querySelector('.mintemp');
 
-button.addEventListener('click', () => {
+weatherButton.addEventListener('click', () => {
+  modal.classList.remove('hidden');
   navigator.geolocation.getCurrentPosition(success);
 });
 // 성공하면 position을 찍는다
@@ -135,15 +149,36 @@ const getWeather = (lat, lon) => {
       return response.json();
     })
     .then((json) => {
+      console.log('json', json);
       const temperature = json.main.temp;
+      const temperatureMax = json.main.temp_max;
+      const temperatureMin = json.main.temp_min;
+
       const place = json.name;
       const description = json.weather[0].description;
       const icon = json.weather[0].icon;
       const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      let today = new Date();
+      let month = today.getMonth() + 1;
+      let date = today.getDate();
+      let monthDate = document.querySelector('.monthdate');
 
-      tempSection.innerText = temperature;
+      monthDate.innerText = month + '.' + date;
+      tempSection.innerText = temperature + ' °C';
       placeSection.innerText = place;
       descSection.innerText = description;
       iconSection.setAttribute('src', iconURL);
+      //   HTML쓸 때는 ''안에 쓰고 변수만 그대로
+      minSection.innerHTML =
+        '<img src="./img/low.png" style="width: 30px">' +
+        temperatureMin +
+        ' °C';
+      maxSection.innerHTML =
+        '<img src="./img/HIGH.png" style="width: 30px">' +
+        temperatureMax +
+        ' °C';
     });
+  modalCloseButton.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
 };

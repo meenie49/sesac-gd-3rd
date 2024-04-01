@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./walkpage.css" />
+    <link rel="stylesheet" href="./weather.css" />
+
     <!-- 구글맵 api를 사용하기 위해 로컬에 작성할 코드를 위해 -->
+    <script defer src="./weather.js"></script>
     <script defer src="./walkpage.js"></script>
     <!-- 원격에 있는 구글 서버로부터 구글맵api를 내려받기 위함 -->
     <!-- defer속성 안줬다고 안떴냐 -->
@@ -13,7 +16,7 @@
     <!-- <script
       defer
       src="https://maps.googleapis.com/maps/api/js?key=내api키&callback=walkMap"
-      ></script> -->
+    ></script> -->
   </head>
   <body>
     <header></header>
@@ -22,24 +25,41 @@
       <!-- 맵 -->
       <section>
         <div class="topbutton">
-          <div class="back" , onclick="location.href='./mypage.html';"></div>
-          <div
-            class="weatherbutton"
-            ,
-            onclick="location.href='./weather.html';"
-          ></div>
+          <div class="back" , onclick="location.href='./mypage.html';">
+            <img src="./img/back.png" alt="" style="width: 40px" />
+          </div>
+          <div id="weatherbutton">
+            <img src="./img/weather.png" alt="" style="width: 60px" />
+          </div>
+          <div id="modalcontainer" class="hidden">
+            <div id="modalcontent">
+              <div class="wl">
+                <div class="monthdate"></div>
+                <div><img class="icon" /></div>
+                <div class="description"></div>
+              </div>
+              <div class="wr">
+                <div class="place"></div>
+                <div class="tem">
+                  <div class="temperature"></div>
+                  <div class="maxmin">
+                    <div class="mintemp"></div>
+                    <div class="maxtemp"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="modalclosebutton">
+              <img src="./img/x.png" alt="닫기" style="width: 40px" />
+            </div>
+          </div>
         </div>
         <!-- <div class="mapprofile"></div> -->
         <!-- 높이 지정해주지 않으면 영영 안나타남 -->
         <!-- <div id="map"></div> -->
         <!-- 지도를 표시할 div 입니다 -->
 
-        <div id="map" style="width: 100%; height: 400px"></div>
-        <div style="display: flex; gap: 10px">
-          <button id="startButton">출발지1 지정</button>
-          <button id="endButton">목적지1 설정</button>
-          <button id="getDirectionButton">차량 경로 가져오기</button>
-        </div>
+        <div id="map" style="width: 100%; height: 75vh"></div>
         <!-- !!!!!!!여기 api수정 -->
         <script
           type="text/javascript"
@@ -50,21 +70,30 @@
       <section>
         <div class="walkinfo">
           <div class="distance">
-            <div class="number">0.0</div>
+            <div class="number"><span id="distance"></span></div>
             <div class="text">거리(km)</div>
           </div>
           <div class="walkpoint">
-            <div class="number">0</div>
+            <div class="number"><span id="pointDisplay"></span></div>
             <div class="text">루미</div>
           </div>
           <div class="hour">
-            <div class="number">00:00</div>
+            <div class="number">
+              <span id="hours"></span> : <span id="minutes"></span>
+            </div>
             <div class="text">시간:분</div>
           </div>
         </div>
         <div class="walkbutton">
-          <div class="ing"></div>
-          <div class="walkstart">산책 시작</div>
+          <div class="ing">
+            <img src="./img/pause.png" alt="멈춤" style="width: 50px" />
+          </div>
+          <div class="walkstart">
+            <img src="./img/play.png" alt="시작" style="width: 50px" />
+          </div>
+          <div class="walkfinish">
+            <img src="./img/ing.png" alt="일시정지" style="width: 50px" />
+          </div>
         </div>
       </section>
     </main>

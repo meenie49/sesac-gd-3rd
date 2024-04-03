@@ -20,7 +20,7 @@ class Person {
 
   getBornYear() {
     // 현재 날짜를 불러와 getFullYear로 년도만 나오게 해서 현재 나이 빼서 태어난해 구하기
-    return new Date().getFullYear - this.age;
+    return new Date().getFullYear() - this.age;
   }
 }
 

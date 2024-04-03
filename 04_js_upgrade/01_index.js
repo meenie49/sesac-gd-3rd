@@ -39,6 +39,8 @@ const newArr = [];
 function usePush() {
   // 화살표 함수도 한줄 간략히 끝나면 중괄호 없이 사용 가능
   // 각 요소를 newArr라는 배열에 (push)삽입
+  // push(): 배열의 가장 마지막에 해당 요소 추가
+  // map(): 배열 내의 모든 원소에 대해 호출한 함수의 결과를 모아 새로운 배열 반환
   lunchMenu.map((menu) => newArr.push(menu));
   dinnerMenu.map((menu) => newArr.push(menu));
 }

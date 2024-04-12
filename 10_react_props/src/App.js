@@ -2,12 +2,13 @@ import FuncProps from './components/FuncProps';
 import ClassProps from './components/ClassProps';
 import './App.css';
 import FoodProps from './components/FoodProps';
-import ProductList from './components/ProductList';
+import ProductItem from './components/ProductItem';
+import ProductContainer from './components/ProductContainer';
 
 function App() {
-  const sayHi = function () {
-    alert('안녕');
-  };
+  // const sayHi = function () {
+  //   alert('안녕');
+  // };
   const products = [
     {
       id: 1,
@@ -97,10 +98,10 @@ function App() {
       {/* <FuncProps>{sayHi}</FuncProps> */}
 
       {/* 요소 전달 */}
-      {/* <FuncProps>
+      <FuncProps>
         <div>안녕안녕</div>
         <div>자니?</div>
-      </FuncProps> */}
+      </FuncProps>
 
       {/* class 컴포넌트에서의 props 사용 */}
       <ClassProps drink='아메리카노' payment='카드' price={4000} />
@@ -119,8 +120,11 @@ function App() {
 
       {/* 연습 */}
       {products.map((prod) => (
-        <ProductList prodData={prod} />
+        <ProductItem prodData={prod} />
       ))}
+
+      {/* 연습 */}
+      <ProductContainer products={products} />
     </div>
   );
 }

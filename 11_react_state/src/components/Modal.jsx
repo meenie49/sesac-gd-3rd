@@ -13,7 +13,7 @@ export default function Modal(props) {
       {/* 클릭되면 모달 버튼 사라지게 */}
       <button onClick={() => setShow(false)}>X</button>
       <div>{msg}</div>
-      <div>{isInput && <input type='text' />}</div>
+      <div>{isInputBtn && <input type='text' />}</div>
       <button
         onClick={() => {
           // 확인 버튼 클릭 시 원하는 로직 작성

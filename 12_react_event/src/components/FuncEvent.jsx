@@ -10,20 +10,30 @@ export default function FuncEvent() {
   const msgToKor = () => {
     setMsg('파이팅😀');
   };
+
   // 불태우기
   // 매개변수 msg는 밖의 함수의 이름이 똑같은 msg와는 상관 없음
   const alertMsg = (msg) => {
     alert(msg);
   };
+
   // 점심
   const [menu, setMenu] = useState('menu');
+
   // 핸들엔터
   const handleEnter = (e) => {
+    // e는 리액트 합성 이벤트 객체를 의미
+    // target은 해당 이벤트가 발생한 요소에 접근할 수 있음
+    // key는 해당 이벤트가 발생한기 위해 눌려진 키보드 키를 의미
+    // 일반 문자는 Process로, Enter는 Enter로 값을 가짐
+    // code는 해당 이벤트가 발생하기 위해 눌려진 키보드 키를 더 자세히 확인
+    // 일반 문자는 KeyA와 같이 key뒤에 눌려진 키를 확인할 수 있음
     console.log(e);
     if (e.key === 'Enter') {
       alert(`점심 메뉴는 ${menu}로 결정`);
     }
   };
+
   return (
     <>
       <h2>함수형 컴포넌트 event handling</h2>
@@ -53,6 +63,7 @@ export default function FuncEvent() {
         type='text'
         value={menu}
         placeholder='오늘 점심 뭐 먹지'
+        // 리액트에서는 document.addEventListner 이렇게 접근하는게 아니고 바로 이벤트이름부터
         // 변경사항이 있을때마다 업데이트되게 -> onChange
         onChange={(e) => {
           // 여기서 사용되는 e는 브라우저의 native 이벤트 객체가 아닌
@@ -61,7 +72,7 @@ export default function FuncEvent() {
           //   console.log(e.target.value);
           setMenu(e.target.value);
         }}
-        // 키보드의 키가 눌렸을 때
+        // 키보드의 키가 눌렸을 때 -> onKeyDown
         // 이벤트객체 인자는 생략가능
         onKeyDown={handleEnter}
       />

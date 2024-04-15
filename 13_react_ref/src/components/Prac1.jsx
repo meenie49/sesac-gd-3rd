@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Prac1() {
   // 현재 입력되어 있는 사용자의 데이터
@@ -18,6 +18,11 @@ export default function Prac1() {
   //  그렇기 때문에 id값은 state로 초기값은 data배열의 길이의 + 1 부터 생성됨
   const [nextId, setNextId] = useState(data.length + 1); // useState(3)
 
+  // input focus를 위한 ref 생성
+  // f2나 ctrl + d 사용해서 한번에 바꿀 수 있음
+  const userInputRef = useRef();
+  const emailInputRef = useRef();
+
   // 변경사항이 있을때마다 change 되면서 업데이트 해주고 있음
 
   // 사용자의 이름을 받는 input에 변경사항이 있을 때 실행되는 함수
@@ -31,9 +36,31 @@ export default function Prac1() {
   // e.target : 현재 이벤트가 발생한 요소 -> input
   // e.target.value : 현재 이벤트가 발생한 input 요소의 value 속성값
   const onChangeEmail = (e) => setInputEmail(e.target.value);
+
+  // validation 로직
+  // if문 두개쓰면 리턴문이 없다면 위에꺼 실행되도 아래꺼도 실행됨
+  // else if문이었다면 위에꺼 true면 아래꺼는 실행이 안됨
+  const validation = () => {
+    // trim : 앞뒤에 있는 공백 제거
+    if (inputUser.trim().length === 0) {
+      userInputRef.current.focus();
+      return false;
+    }
+
+    if (emailInputRef.trim().length === 0) {
+      emailInputRef.current.focus();
+      return false;
+    }
+
+    return true;
+  };
   // 이메일을 입력받는 인풋에 onKeyDown 속성과 등록 버튼의 onClick 속성에서 사용됨
   // 새로운 데이터를 data state에 추가, input 2개를 초기화, nextid state 더한값으로 업데이트
   const eventClick = () => {
+    // validation함수값이 false라면 그냥 빠져나옴
+    if (!validation) {
+      return;
+    }
     // 새로운 데이터를 기존 데이터 배열에 추가
     // 참고) concat(): https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
     // const nextData = data.concat({
@@ -114,6 +141,7 @@ export default function Prac1() {
       <input
         type='text'
         name='user'
+        ref={userInputRef}
         placeholder='이름'
         value={inputUser}
         onChange={onChangeUser}
@@ -122,6 +150,7 @@ export default function Prac1() {
       <input
         type='text'
         name='email'
+        ref={emailInputRef}
         placeholder='이메일'
         value={inputEmail}
         onChange={onChangeEmail}
